@@ -1,0 +1,53 @@
+name: WAODAO
+description: >-
+  WAODAO Agent API is a public, read-only JSON API for traversing the WAODAO daily Human + AI ArtChain and discovering
+  official WAO token deployments and liquidity pools across Ethereum and Solana. One AI-generated NFT is created per day
+  from world news, digital trends, human input, and AI art.
+url: https://waodao.apievangelist.com/apis.yml
+created: '2026-07-24'
+modified: '2026-07-24'
+specificationVersion: '0.21'
+tags:
+  - AI Agents
+  - ArtChain
+  - Human and AI
+  - NFT Metadata
+  - On-chain Culture
+  - Liquidity Pools
+  - Web3
+  - OpenAPI
+apis:
+  - name: WAODAO Agent API
+    description: >-
+      Public, read-only JSON API for traversing the WAODAO daily Human + AI ArtChain and discovering official WAO token
+      deployments and liquidity pools. Five GET operations: index, latest, token/{day}, schema, and pools.
+    humanURL: https://waodao.ai/ai-agents
+    baseURL: https://waodao.ai/api/v1/waodao
+    tags:
+      - AI Agents
+      - ArtChain
+      - Human and AI
+      - NFT Metadata
+      - On-chain Culture
+      - Liquidity Pools
+      - Web3
+      - OpenAPI
+    properties:
+      - type: OpenAPI
+        url: https://waodao.ai/openapi.json
+      - type: OpenAPI
+        url: https://waodao.ai/openapi-3.0.json
+      - type: PostmanCollection
+        url: https://waodao.ai/postman-collection.json
+      - type: LLMsTxt
+        url: https://waodao.ai/llms.txt
+      - type: Documentation
+        url: https://waodao.ai/ai-agents
+maintainers:
+  - FN: WAODAO
+    url: https://waodao.ai
+generated:
+  by: apis.io/add
+  model: claude-opus-4-8
+  confidence: 98
+  at: '2026-07-24T07:42:30.868Z'
