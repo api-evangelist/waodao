@@ -1,0 +1,75 @@
+generated: '2026-08-09'
+method: searched
+source: >-
+  Live probes of https://waodao.ai (discovery paths + API responses) plus the published
+  OpenAPI 3.1 / 3.0.2 contracts, APIs.json index, RFC 9727 catalog and llms.txt.
+standards:
+  - id: openapi-3.1
+    conforms: true
+    evidence: https://waodao.ai/openapi.json declares openapi 3.1.0 with 5 operations, tags, operationIds and component schemas (200).
+  - id: openapi-3.0
+    conforms: true
+    evidence: https://waodao.ai/openapi-3.0.json publishes a 3.0.2 compatibility contract for importers that do not support 3.1 (200).
+  - id: apis-json
+    conforms: true
+    evidence: APIs.json 0.19 index at /apis.json and the /.well-known/apis.json alias (200), with typed properties and maintainers.
+  - id: rfc9727-api-catalog
+    conforms: true
+    evidence: >-
+      /.well-known/api-catalog returns an application/linkset+json linkset with item/service-desc/
+      service-doc/service-meta relations (200), and every JSON API response carries a
+      `Link: <https://waodao.ai/.well-known/api-catalog>; rel="api-catalog"` header.
+  - id: llms-txt
+    conforms: true
+    evidence: https://waodao.ai/llms.txt (200) with H1, blockquote summary and sectioned link lists; a second llms.txt is published on the GitBook docs host.
+  - id: postman-collection-v2
+    conforms: true
+    evidence: https://waodao.ai/postman-collection.json (200) — importable collection covering all five requests with a base-URL variable.
+  - id: cors
+    conforms: true
+    evidence: 'Observed `access-control-allow-origin: *` on live /api/v1/waodao/* responses.'
+  - id: http-caching
+    conforms: true
+    evidence: 'Observed `cache-control: public, max-age=300` on live API responses; the OpenAPI documents the Cache-Control response header.'
+  - id: erc-721
+    conforms: true
+    evidence: >-
+      WAODAO ArtChain NFTs are minted to an ERC-721 contract at
+      0x3b9a62c6dd4d93f8a6fa4a350da32d28fac80863 (documented in the GitBook smart-contracts page);
+      token metadata is OpenSea-compatible (name/description/image/external_url/attributes).
+  - id: erc-20
+    conforms: true
+    evidence: WAO ecosystem token is an ERC-20 at 0xc3ad687c8ecb352d56393c77d19018b93a6ad21a (GitBook smart-contracts page).
+  - id: spl-token
+    conforms: true
+    evidence: WAO Solana SPL Token mint 8VXHSGipWfvkA4zueP42YrexbhcWDQKRT1uXZTFEZUn7, bridged via Wormhole (GitBook smart-contracts page).
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: 'Errors return application/json with a flat {error, code} envelope (ErrorResponse schema), not application/problem+json.'
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: https://waodao.ai/.well-known/security.txt returns 404.
+  - id: oauth2
+    conforms: false
+    evidence: No OAuth surface — the API is public and unauthenticated; /.well-known/oauth-authorization-server returns 404.
+  - id: oidc-discovery
+    conforms: false
+    evidence: /.well-known/openid-configuration returns 404.
+  - id: a2a-agent-card
+    conforms: false
+    evidence: /.well-known/agent-card.json and /.well-known/agent.json both return 404 (HTML 404 page).
+  - id: mcp
+    conforms: false
+    evidence: No hosted MCP server found on waodao.ai, in apis.json, llms.txt, the RFC 9727 catalog, npm or the public MCP registries.
+  - id: asyncapi
+    conforms: false
+    evidence: No event, streaming or webhook surface is published; /asyncapi.yaml and /asyncapi.json return 404.
+  - id: hsts
+    conforms: false
+    evidence: 'No Strict-Transport-Security header observed on https://waodao.ai (see security/waodao-domain-security.yml).'
+compliance_program:
+  published: false
+  note: >-
+    No SOC 2 / ISO 27001 / PCI / GDPR certification or trust center is published. WAODAO publishes a
+    project Disclaimer (https://waodao.gitbook.io/docs/disclaimer) covering risk, IP and content
+    moderation, and a smart-contract security approach page, but no formal compliance attestation.

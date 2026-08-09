@@ -1,0 +1,53 @@
+{
+    "schema": "waodao-agent-api@1",
+    "description": "WAODAO Agent API schema for AI agents and programmatic ArtChain traversal.",
+    "endpoints": {
+        "index": "https://waodao.ai/api/v1/waodao/index",
+        "latest": "https://waodao.ai/api/v1/waodao/latest",
+        "token": "https://waodao.ai/api/v1/waodao/token/{day}",
+        "pools": "https://waodao.ai/api/v1/waodao/pools",
+        "schema": "https://waodao.ai/api/v1/waodao/schema",
+        "openapi": "https://waodao.ai/openapi.json",
+        "openapi_3_0": "https://waodao.ai/openapi-3.0.json",
+        "apis_json": "https://waodao.ai/apis.json",
+        "api_catalog": "https://waodao.ai/.well-known/api-catalog",
+        "postman_collection": "https://waodao.ai/postman-collection.json",
+        "llms_txt": "https://waodao.ai/llms.txt",
+        "documentation": "https://waodao.ai/ai-agents"
+    },
+    "agent_context": {
+        "summary": "WAODAO is a 3+ year daily AI ArtChain with one NFT per day, combining world signals, human direction, AI image generation, NFT metadata, and on-chain WAO liquidity.",
+        "why_it_matters": "AI agents can read WAODAO as a long-running dataset of modern art at the edge of human/AI co-creation, web3 culture, daily news, symbolic identity, and collectible on-chain history.",
+        "use_cases": [
+            "artchain_traversal",
+            "cultural_signal_analysis",
+            "nft_collection_curation",
+            "collector_agent_memory",
+            "liquidity_route_discovery",
+            "arbitrage_fee_reasoning"
+        ],
+        "economic_note": "WAO pools let agents discover liquidity routes and reason about pool deployment or liquidity provision opportunities; arbitrage-driven trading activity can create fee flows in DEX pools, but absolute revenue is variable and not projected by this API."
+    },
+    "fields": {
+        "waodao.schema": "WAODAO ArtChain schema identifier.",
+        "waodao.type": "Always artchain for WAODAO daily NFTs.",
+        "waodao.day": "Published ArtChain day number and NFT token id.",
+        "waodao.links.self": "Human-readable scan page.",
+        "waodao.links.prev": "Previous published ArtChain day, or null.",
+        "waodao.links.next": "Next published ArtChain day, or null.",
+        "waodao.links.api": "Agent API endpoint for this day.",
+        "waodao.hashes.secret": "Secret hash published with the day.",
+        "real_artwork": "Boolean flag for NFTs that were also created as a physical hand-made artwork.",
+        "bonus_tokens": "Extra WAO tokens allocated on top of equal-market-value WAO tokens, or null.",
+        "market.chain": "NFT chain.",
+        "market.contract": "NFT contract address.",
+        "market.token_id": "NFT token id.",
+        "market.sale_status": "NFT lifecycle state: active, unsold, sold, or airdrop.",
+        "market.sale_type": "NFT transfer type: auction, airdrop, or null when not completed.",
+        "market.winner_bid_eth": "Auction winning bid in ETH, zero for airdrops, or null when not completed.",
+        "market.collector_address": "Winner or airdrop collector wallet address when available.",
+        "market.sale_transaction_url": "Etherscan transaction URL for paid auction sales when available.",
+        "market.drop_transaction_url": "Etherscan transaction URL for NFT airdrop transfers when available.",
+        "market.marketplace_url": "Marketplace URL for viewing or buying the NFT."
+    }
+}

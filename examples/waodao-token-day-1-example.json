@@ -1,0 +1,152 @@
+{
+    "project": "WAODAO",
+    "schema": "waodao-token@1",
+    "schema_url": "https://waodao.ai/api/v1/waodao/schema",
+    "day": 1,
+    "date": "2023-02-14",
+    "timestamp": 1676376000,
+    "name": "WAO ART #1",
+    "description": "WAODAO ArtChain Day #1: a daily AI-generated NFT based on world news, digital trends, human input, and a secret hash.",
+    "image": "ipfs://QmWSRAf6YvcmpN8k8i3wAtRe5bUAPwyz9C9qcZEQqZaiYT",
+    "external_url": "https://waodao.ai/scan/1",
+    "real_artwork": false,
+    "bonus_tokens": null,
+    "links": {
+        "self": "https://waodao.ai/api/v1/waodao/token/1",
+        "prev": null,
+        "next": "https://waodao.ai/api/v1/waodao/token/2",
+        "index": "https://waodao.ai/api/v1/waodao/index",
+        "latest": "https://waodao.ai/api/v1/waodao/latest",
+        "pools": "https://waodao.ai/api/v1/waodao/pools",
+        "openapi": "https://waodao.ai/openapi.json"
+    },
+    "attributes": [
+        {
+            "trait_type": "Region",
+            "value": "Crypto"
+        },
+        {
+            "display_type": "boost_number",
+            "trait_type": "Collectible index",
+            "value": 0.01
+        },
+        {
+            "trait_type": "AI Service",
+            "value": "Midjourney"
+        },
+        {
+            "trait_type": "Main color code",
+            "value": "#FFA64E"
+        },
+        {
+            "trait_type": "Main color name",
+            "value": "Sunshade"
+        },
+        {
+            "trait_type": "Twitter trend",
+            "value": "#ValentinesDay"
+        },
+        {
+            "trait_type": "Trending crypto",
+            "value": "Vela Token"
+        },
+        {
+            "trait_type": "Trending NFT",
+            "value": "Mutant Ape Yacht Club"
+        },
+        {
+            "trait_type": "New coin",
+            "value": "Neural AI"
+        },
+        {
+            "display_type": "date",
+            "trait_type": "Day",
+            "value": 1676376000
+        }
+    ],
+    "waodao": {
+        "schema": "waodao-artchain@1",
+        "schema_url": "https://waodao.ai/api/v1/waodao/schema",
+        "version": "1.0",
+        "type": "artchain",
+        "day": 1,
+        "links": {
+            "self": "https://waodao.ai/scan/1",
+            "prev": null,
+            "next": "https://waodao.ai/scan/2",
+            "api": "https://waodao.ai/api/v1/waodao/token/1"
+        },
+        "hashes": {
+            "secret": "8a92f166862a10b5"
+        }
+    },
+    "market": {
+        "chain": "ethereum",
+        "chain_id": 1,
+        "contract": "0x3b9a62c6dd4d93f8a6fa4a350da32d28fac80863",
+        "token_id": "1",
+        "sale_status": "sold",
+        "sale_type": "auction",
+        "winner_bid_eth": "2.3",
+        "collector_address": "0x5109DEe9aEF8B8F52E191055CD377636e3AE5f57",
+        "sale_transaction_url": "https://etherscan.io/tx/0xbe45d7bb06cab99719e05d4d3188adbc2f88415bde945ed0dba2f9ad690de107",
+        "contract_token_url": "https://etherscan.io/token/0x3b9a62c6dd4d93f8a6fa4a350da32d28fac80863?a=1",
+        "marketplace": "OpenSea",
+        "collection_url": "https://opensea.io/collection/waodao",
+        "marketplace_url": "https://opensea.io/assets/ethereum/0x3b9a62c6dd4d93f8a6fa4a350da32d28fac80863/1"
+    },
+    "news": [
+        {
+            "region": "Africa",
+            "key": "africa",
+            "text": "The South African government has declared a national disaster due to heavy rains that have caused flooding in seven of its nine provinces. The national weather service predicts the rains will continue.",
+            "url": null
+        },
+        {
+            "region": "Europe",
+            "key": "europe",
+            "text": "Thousands of rescue teams in Turkey search for signs of life in the rubble of the two earthquakes that struck the region a week ago. The death toll has surpassed 33,000 and is expected to rise. Without electricity, water, or toilets, survivors are at risk of a cholera outbreak.",
+            "url": null
+        },
+        {
+            "region": "Oceania",
+            "key": "oceania",
+            "text": "New Zealand has declared a state of emergency due to Cyclone Gabrielle, the third such alert in its history. It applies to 6 regions and streamlines the government's response. At least 38,000 homes were without power and evacuation centres have been set up.",
+            "url": null
+        },
+        {
+            "region": "Asia",
+            "key": "asia",
+            "text": "China initially remained silent about the balloon saga, but later admitted it belonged to them and was a civilian airship used for research. Chinese officials took a near-apologetic tone and characterized it as an accident. Chinese state media and netizens reacted with suspicion and indignation.",
+            "url": null
+        },
+        {
+            "region": "North America",
+            "key": "northAmerica",
+            "text": "The US military has recovered sensors from the first suspected Chinese spy balloon shot down over the US from the Atlantic Ocean. The FBI is examining the items. Three more objects have been shot down since then, including one over South Carolina, Alaska, and Lake Huron.",
+            "url": null
+        },
+        {
+            "region": "Latin America",
+            "key": "latinAmerica",
+            "text": "Argentines are feeling the strain of one of the world's highest inflation rates, with prices rising nearly 100%. People are struggling to make ends meet as the cost of food, gas and services far outstrip salaries.",
+            "url": null
+        },
+        {
+            "region": "Crypto",
+            "key": "crypto",
+            "text": "Paxos Trust Company, the crypto firm behind the Binance USD stablecoin, has addressed the Wells notice issued by the U.S. Securities and Exchange Commission (SEC). Paxos disagreed with SEC allegations and stated that the BUSD issued by the firm is always backed 1:1 with USD-denominated reserves.",
+            "url": null
+        }
+    ],
+    "trends": {
+        "twitter": "#ValentinesDay",
+        "crypto": "Vela Token",
+        "nft": "Mutant Ape Yacht Club",
+        "newCoin": "Neural AI"
+    },
+    "source": {
+        "raw_site_data_url": "https://waodao.ai/data/1/index.json",
+        "agent_api_url": "https://waodao.ai/api/v1/waodao/token/1"
+    }
+}

@@ -1,0 +1,48 @@
+generated: '2026-08-09'
+method: searched
+source: https://waodao.ai/.well-known/
+host: https://waodao.ai
+notes: >-
+  WAODAO publishes an APIs.json 0.19 index at both /apis.json and the /.well-known/apis.json
+  discovery alias, plus an RFC 9727 API catalog (application/linkset+json) at
+  /.well-known/api-catalog. The api-catalog is also advertised on every JSON API response as a
+  `Link: <https://waodao.ai/.well-known/api-catalog>; rel="api-catalog"` header. No OAuth/OIDC
+  discovery documents exist because the API requires no authentication, and no security.txt
+  (RFC 9116) is published. All 404 responses below return the site's HTML 404 page.
+documents:
+  - path: /.well-known/apis.json
+    status: 200
+    content_type: application/json
+    file: waodao-apis.json
+    spec: APIs.json 0.19
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: application/json
+    file: waodao-api-catalog.json
+    spec: RFC 9727 (application/linkset+json)
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+related:
+  - path: /apis.json
+    status: 200
+    note: Canonical APIs.json location; identical document to the well-known alias.
+  - path: /robots.txt
+    status: 200
+    note: Explicitly allows /api/v1/waodao/, /llms.txt, /openapi.json, /apis.json, /.well-known/*.
+  - path: /sitemap.xml
+    status: 200
+x-evidence:
+  fetched: '2026-08-09'
+  method: HTTP GET per path

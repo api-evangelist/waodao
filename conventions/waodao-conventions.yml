@@ -1,0 +1,94 @@
+generated: '2026-08-09'
+method: searched
+source: >-
+  https://waodao.ai/ai-agents (api-access + api-reference) + https://waodao.ai/llms.txt +
+  openapi/waodao-agent-api-openapi.json + observed live response headers
+summary: >-
+  Cross-cutting request/response semantics for the WAODAO Agent API: five public read-only GET
+  operations, no authentication, CORS-open, cacheable, link-traversal instead of pagination.
+  Idempotency is NOT documented as a contract — and because every operation is a safe GET there is
+  no write surface that would need an idempotency key. Do not assume one exists.
+authentication:
+  style: none
+  see: authentication/waodao-authentication.yml
+base_url: https://waodao.ai/api/v1/waodao
+methods: [GET]
+media_type: application/json
+cors:
+  enabled: true
+  header: 'Access-Control-Allow-Origin: *'
+  observed: true
+caching:
+  header: 'Cache-Control: public, max-age=300'
+  observed: true
+  guidance: >-
+    Published guidance: start with the compact index, cache stable token responses, and avoid
+    high-frequency crawling. Historical days are immutable once published.
+pagination:
+  style: none
+  notes: >-
+    /index returns the complete ArtChain snapshot in one document (~1.4 MB as observed on
+    2026-08-09) with no page/cursor parameters. Depth comes from per-day token documents rather
+    than pages.
+traversal:
+  style: hypermedia-links
+  fields:
+    - links.prev
+    - links.next
+    - links.self
+    - links.index
+    - links.latest
+    - links.pools
+    - waodao.links.prev
+    - waodao.links.next
+    - waodao.links.api
+    - items[].metadata_url
+  notes: >-
+    Documented workflow is to read /index, then traverse via `items[].metadata_url` or the token
+    `links.prev` / `links.next` chain. `prev` is null on day 1 and `next` is null on the newest
+    published day.
+idempotency:
+  documented: false
+  applicable: false
+  notes: >-
+    Read-only API — all five operations are GET and therefore safe and naturally idempotent, but no
+    Idempotency-Key header or contract is documented. No `Idempotency` pointer is wired in apis.yml
+    because there is no write surface to make idempotent.
+field_expansion:
+  supported: false
+metadata:
+  extension_block: waodao
+  notes: >-
+    Token responses are OpenSea-compatible NFT metadata (name, description, image, external_url,
+    attributes) plus WAODAO-specific `waodao`, `market`, `news` and `source` blocks. Field
+    semantics are self-described at GET /api/v1/waodao/schema (getAgentApiSchema).
+request_tracing:
+  request_id_header: none
+  notes: >-
+    No first-party request-id header. The edge (Hostinger hcdn) returns `x-hcdn-request-id`, which
+    is CDN infrastructure, not an API contract.
+versioning:
+  see: lifecycle/waodao-lifecycle.yml
+  scheme: uri-path
+  current: v1
+error_envelope:
+  media_type: application/json
+  shape: '{ "error": string, "code": integer }'
+  see: errors/waodao-problem-types.yml
+rate_limits:
+  numeric_quota_published: false
+  headers: none
+  policy: >-
+    "No numeric request quota is currently published. Use fair-use access, avoid high-frequency
+    crawling, prefer the compact index, and cache stable token responses." — llms.txt Access Notes.
+  docs: https://waodao.ai/ai-agents#api-access
+discovery:
+  api_catalog_link_header: 'Link: <https://waodao.ai/.well-known/api-catalog>; rel="api-catalog"'
+  observed: true
+  see: well-known/waodao-well-known.yml
+cross_links:
+  authentication: authentication/waodao-authentication.yml
+  errors: errors/waodao-problem-types.yml
+  lifecycle: lifecycle/waodao-lifecycle.yml
+  data_model: data-model/waodao-data-model.yml
+  conformance: conformance/waodao-conformance.yml

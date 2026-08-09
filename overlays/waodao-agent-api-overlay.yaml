@@ -1,0 +1,69 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the WAODAO Agent API
+  version: 1.0.0
+extends: openapi/waodao-agent-api-openapi.json
+generated: '2026-08-09'
+method: generated
+source: openapi/waodao-agent-api-openapi.json
+rationale: >-
+  The harvested contract (openapi/waodao-agent-api-openapi.json, OpenAPI 3.1.0) is already strong:
+  operationIds, tags, summaries, descriptions, component schemas, response headers and live
+  externalValue examples on every 200. This overlay adds only API Evangelist enrichment metadata
+  and the gaps we observed live — it never mutates the harvested original. Apply with any
+  Overlay 1.0.0 processor against openapi/waodao-agent-api-openapi.json.
+actions:
+  - target: $.info
+    description: Link the harvested spec back to the API Evangelist profile and the artifacts derived from it.
+    update:
+      x-apievangelist-provider: waodao
+      x-apievangelist-profile: https://waodao.apievangelist.com/apis.yml
+      x-apievangelist-artifacts:
+        authentication: authentication/waodao-authentication.yml
+        conventions: conventions/waodao-conventions.yml
+        errors: errors/waodao-problem-types.yml
+        lifecycle: lifecycle/waodao-lifecycle.yml
+        data_model: data-model/waodao-data-model.yml
+        conformance: conformance/waodao-conformance.yml
+        well_known: well-known/waodao-well-known.yml
+        skills: skills/_index.yml
+  - target: $.info
+    description: Record the observed access posture (public, unauthenticated, CORS-open, cacheable).
+    update:
+      x-access-model:
+        public: true
+        authentication: none
+        cors: true
+        cache_control: 'public, max-age=300'
+        rate_limit: 'fair-use; no numeric quota published'
+        source: https://waodao.ai/ai-agents#api-access
+  - target: $.paths['/api/v1/waodao/index'].get
+    description: >-
+      Record the observed response size of the full index snapshot so agent clients can budget for
+      it (measured 2026-08-09) and prefer per-day traversal for depth.
+    update:
+      x-observed-response-bytes: 1422800
+      x-agent-guidance: >-
+        Read this once to map the collection (first_day, latest_day, total_days, items[]), then
+        traverse per-day with getArtChainDay rather than re-fetching the index.
+  - target: $.paths['/api/v1/waodao/index'].get.responses['200']
+    description: Add the RFC 9727 api-catalog Link header observed on every live JSON response but not declared in the contract.
+    update:
+      headers:
+        Link:
+          description: 'RFC 9727 API catalog discovery link, observed on live responses: <https://waodao.ai/.well-known/api-catalog>; rel="api-catalog".'
+          schema:
+            type: string
+            example: '<https://waodao.ai/.well-known/api-catalog>; rel="api-catalog"'
+  - target: $.paths['/api/v1/waodao/pools'].get
+    description: Bind the pool registry operation to the on-chain deployments it returns.
+    update:
+      x-onchain:
+        ethereum:
+          standard: ERC-20
+          contract: '0xc3ad687c8ecb352d56393c77d19018b93a6ad21a'
+        solana:
+          standard: SPL Token
+          mint: '8VXHSGipWfvkA4zueP42YrexbhcWDQKRT1uXZTFEZUn7'
+          bridge: Wormhole
+        note: Static registry — live prices, TVL and swap quotes are intentionally excluded by the provider.

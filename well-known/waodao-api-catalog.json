@@ -1,0 +1,64 @@
+{
+    "linkset": [
+        {
+            "anchor": "https://waodao.ai/.well-known/api-catalog",
+            "item": [
+                {
+                    "href": "https://waodao.ai/api/v1/waodao/index",
+                    "type": "application/json",
+                    "title": "WAODAO ArtChain index"
+                },
+                {
+                    "href": "https://waodao.ai/api/v1/waodao/latest",
+                    "type": "application/json",
+                    "title": "Latest WAODAO ArtChain day"
+                },
+                {
+                    "href": "https://waodao.ai/api/v1/waodao/token/1",
+                    "type": "application/json",
+                    "title": "WAODAO token metadata example"
+                },
+                {
+                    "href": "https://waodao.ai/api/v1/waodao/schema",
+                    "type": "application/json",
+                    "title": "WAODAO Agent API field guide"
+                },
+                {
+                    "href": "https://waodao.ai/api/v1/waodao/pools",
+                    "type": "application/json",
+                    "title": "WAO pool registry"
+                }
+            ],
+            "service-desc": [
+                {
+                    "href": "https://waodao.ai/openapi.json",
+                    "type": "application/vnd.oai.openapi+json;version=3.1"
+                },
+                {
+                    "href": "https://waodao.ai/openapi-3.0.json",
+                    "type": "application/vnd.oai.openapi+json;version=3.0"
+                }
+            ],
+            "service-doc": [
+                {
+                    "href": "https://waodao.ai/ai-agents",
+                    "type": "text/html"
+                }
+            ],
+            "service-meta": [
+                {
+                    "href": "https://waodao.ai/apis.json",
+                    "type": "application/json"
+                },
+                {
+                    "href": "https://waodao.ai/postman-collection.json",
+                    "type": "application/json"
+                },
+                {
+                    "href": "https://waodao.ai/llms.txt",
+                    "type": "text/plain"
+                }
+            ]
+        }
+    ]
+}

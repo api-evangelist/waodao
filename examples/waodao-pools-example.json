@@ -1,0 +1,169 @@
+{
+    "project": "WAODAO",
+    "schema": "waodao-pools@1",
+    "purpose": "proof_of_onchain_presence",
+    "description": "Official WAO liquidity pools and on-chain market entry points for agents.",
+    "docs_url": "https://waodao.gitbook.io/docs/development/friendly-pools",
+    "links": {
+        "self": "https://waodao.ai/api/v1/waodao/pools",
+        "index": "https://waodao.ai/api/v1/waodao/index",
+        "openapi": "https://waodao.ai/openapi.json",
+        "docs": "https://waodao.gitbook.io/docs/development/friendly-pools"
+    },
+    "summary": {
+        "total_pools": 8,
+        "chains": [
+            "ethereum",
+            "solana"
+        ],
+        "dexes": [
+            "Balancer",
+            "Meteora",
+            "Uniswap"
+        ]
+    },
+    "market_entry": {
+        "primary_pair": "WAO/ETH",
+        "primary_chain": "ethereum",
+        "primary_dex": "Uniswap",
+        "pool_url": "https://app.uniswap.org/explore/pools/ethereum/0x8D5e3Ac5355491faCc86b8371d59918ad1B91FD0",
+        "dexscreener_url": "https://dexscreener.com/ethereum/0x8D5e3Ac5355491faCc86b8371d59918ad1B91FD0"
+    },
+    "wao_token": {
+        "symbol": "WAO",
+        "name": "WAODAO",
+        "deployments": {
+            "ethereum": {
+                "chain": "ethereum",
+                "standard": "ERC-20",
+                "contract_address": "0xc3ad687c8ecb352d56393c77d19018b93a6ad21a",
+                "decimals": 18,
+                "explorer_url": "https://etherscan.io/token/0xc3ad687c8ecb352d56393c77d19018b93a6ad21a",
+                "verification": {
+                    "method": "public_ethereum_rpc",
+                    "name": "WAODAO",
+                    "symbol": "WAO",
+                    "decimals": 18
+                }
+            },
+            "solana": {
+                "chain": "solana",
+                "standard": "SPL Token",
+                "mint_address": "8VXHSGipWfvkA4zueP42YrexbhcWDQKRT1uXZTFEZUn7",
+                "decimals": 8,
+                "bridge": "Wormhole",
+                "source_chain": "ethereum",
+                "source_contract_address": "0xc3ad687c8ecb352d56393c77d19018b93a6ad21a",
+                "explorer_url": "https://solscan.io/token/8VXHSGipWfvkA4zueP42YrexbhcWDQKRT1uXZTFEZUn7",
+                "verification": {
+                    "method": "public_solana_rpc",
+                    "is_initialized": true,
+                    "program": "spl-token",
+                    "decimals": 8,
+                    "bridge_provenance": "project_provided"
+                }
+            }
+        }
+    },
+    "data_policy": "Live prices, TVL, and swap quotes are intentionally not included in this static registry.",
+    "items": [
+        {
+            "pair": "WAO/ETH",
+            "type": "dex_pool",
+            "category": "core_liquidity_route",
+            "chain": "ethereum",
+            "dex": "Uniswap",
+            "protocol": null,
+            "pool_identifier": "0x8D5e3Ac5355491faCc86b8371d59918ad1B91FD0",
+            "pool_url": "https://app.uniswap.org/explore/pools/ethereum/0x8D5e3Ac5355491faCc86b8371d59918ad1B91FD0",
+            "description": "Core Ethereum liquidity route for WAO and ETH.",
+            "status": "active",
+            "pool_contract": "0x8D5e3Ac5355491faCc86b8371d59918ad1B91FD0"
+        },
+        {
+            "pair": "WAO/WBTC",
+            "type": "dex_pool",
+            "category": "core_liquidity_route",
+            "chain": "ethereum",
+            "dex": "Uniswap",
+            "protocol": null,
+            "pool_identifier": "0x8c301122d5afec94969c2f99cfc22fb5df3823a9902e386584cfdc3b2adce20b",
+            "pool_url": "https://app.uniswap.org/explore/pools/ethereum/0x8c301122d5afec94969c2f99cfc22fb5df3823a9902e386584cfdc3b2adce20b",
+            "description": "Bitcoin exposure paired through the WAO layer.",
+            "status": "active"
+        },
+        {
+            "pair": "WAO/SOL",
+            "type": "dex_pool",
+            "category": "core_liquidity_route",
+            "chain": "solana",
+            "dex": "Meteora",
+            "protocol": "DAMM v2",
+            "pool_identifier": "Fa2oMexNzPfSXFdPBEZP8yRkX2S97aMqeezPpXVg6afQ",
+            "pool_url": "https://www.meteora.ag/dammv2/Fa2oMexNzPfSXFdPBEZP8yRkX2S97aMqeezPpXVg6afQ",
+            "description": "Solana-side WAO liquidity route.",
+            "status": "active"
+        },
+        {
+            "pair": "WAO/UNI",
+            "type": "dex_pool",
+            "category": "core_liquidity_route",
+            "chain": "ethereum",
+            "dex": "Uniswap",
+            "protocol": "Uniswap v4",
+            "pool_identifier": "0x7b7efdcd0928be53a7dee7b4d7c6bef774f0ec1d1b668e165bf651a556334c6f",
+            "pool_url": "https://app.uniswap.org/positions/v4/ethereum/223235",
+            "description": "Liquidity link to the Uniswap ecosystem asset.",
+            "status": "active"
+        },
+        {
+            "pair": "WAO/LINK",
+            "type": "dex_pool",
+            "category": "core_liquidity_route",
+            "chain": "ethereum",
+            "dex": "Balancer",
+            "protocol": "Balancer v3",
+            "pool_identifier": "0x1A3bEba76D707B6c407f0987742446C2b58bC1D1",
+            "pool_url": "https://balancer.fi/pools/ethereum/v3/0x1A3bEba76D707B6c407f0987742446C2b58bC1D1",
+            "description": "Oracle-sector exposure through a Balancer pool.",
+            "status": "active",
+            "pool_contract": "0x1A3bEba76D707B6c407f0987742446C2b58bC1D1"
+        },
+        {
+            "pair": "WAO/HOT",
+            "type": "dex_pool",
+            "category": "friendly_pool",
+            "chain": "ethereum",
+            "dex": "Uniswap",
+            "protocol": "Uniswap v4",
+            "pool_identifier": "0x069bebbda0c3ff996dbcdf60d83cdbe2ed01a4bafba606396140f3a96f2b5b99",
+            "pool_url": "https://app.uniswap.org/positions/v4/ethereum/218844",
+            "description": "Friendly Pool route with HOT.",
+            "status": "active"
+        },
+        {
+            "pair": "WAO/BABA",
+            "type": "dex_pool",
+            "category": "friendly_pool",
+            "chain": "solana",
+            "dex": "Meteora",
+            "protocol": "DAMM v2",
+            "pool_identifier": "Cp6NskJTMBSYGbFno1Yrw9HWM2VhZAG1ct17vNR8sRZr",
+            "pool_url": "https://www.meteora.ag/dammv2/Cp6NskJTMBSYGbFno1Yrw9HWM2VhZAG1ct17vNR8sRZr",
+            "description": "Friendly Pool route with BABA.",
+            "status": "active"
+        },
+        {
+            "pair": "WAO/Simulation",
+            "type": "dex_pool",
+            "category": "friendly_pool",
+            "chain": "solana",
+            "dex": "Meteora",
+            "protocol": "DAMM v2",
+            "pool_identifier": "Hnu65ZSbakrheFZRso5AB4qXhLtBfYrjJEwSApGFdaqG",
+            "pool_url": "https://www.meteora.ag/dammv2/Hnu65ZSbakrheFZRso5AB4qXhLtBfYrjJEwSApGFdaqG",
+            "description": "Friendly Pool route with Simulation.",
+            "status": "active"
+        }
+    ]
+}

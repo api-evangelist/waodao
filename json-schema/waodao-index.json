@@ -1,0 +1,399 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://waodao.apievangelist.com/json-schema/waodao-index.json",
+  "title": "IndexResponse",
+  "description": "Derived verbatim from components.schemas.IndexResponse in openapi/waodao-agent-api-openapi.json (OpenAPI 3.1.0, JSON Schema 2020-12 dialect).",
+  "type": "object",
+  "required": [
+    "project",
+    "schema",
+    "description",
+    "agent_context",
+    "schema_url",
+    "links",
+    "collection",
+    "first_day",
+    "latest_day",
+    "total_days",
+    "count",
+    "traversal",
+    "items"
+  ],
+  "properties": {
+    "project": {
+      "type": "string",
+      "example": "WAODAO"
+    },
+    "schema": {
+      "type": "string",
+      "example": "waodao-index@1"
+    },
+    "description": {
+      "type": "string"
+    },
+    "agent_context": {
+      "$ref": "#/$defs/AgentContext"
+    },
+    "schema_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "collection": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "nft_contract": {
+          "type": "string"
+        },
+        "chain": {
+          "type": "string"
+        },
+        "marketplace": {
+          "type": "string"
+        },
+        "marketplace_url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "first_day": {
+      "oneOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "latest_day": {
+      "oneOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "total_days": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "traversal": {
+      "type": "object",
+      "properties": {
+        "start_day": {
+          "oneOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "end_day": {
+          "oneOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "strategy": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/IndexItem"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "AgentContext": {
+      "type": "object",
+      "required": [
+        "summary",
+        "why_it_matters",
+        "use_cases",
+        "economic_note"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string"
+        },
+        "why_it_matters": {
+          "type": "string"
+        },
+        "use_cases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "economic_note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "IndexItem": {
+      "type": "object",
+      "required": [
+        "day",
+        "date",
+        "timestamp",
+        "name",
+        "metadata_url",
+        "external_url",
+        "marketplace_url",
+        "sale_status",
+        "sale_type",
+        "winner_bid_eth",
+        "raw_site_data_url",
+        "image",
+        "real_artwork",
+        "bonus_tokens",
+        "prev_day",
+        "next_day",
+        "region",
+        "main_color",
+        "main_color_name",
+        "twitter_trend",
+        "trending_crypto",
+        "trending_nft",
+        "new_coin",
+        "secret_hash"
+      ],
+      "properties": {
+        "day": {
+          "type": "integer",
+          "minimum": 1,
+          "example": 1
+        },
+        "date": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "timestamp": {
+          "oneOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "name": {
+          "type": "string",
+          "example": "WAO ART #1"
+        },
+        "metadata_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "external_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "marketplace_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sale_status": {
+          "type": "string",
+          "enum": [
+            "active",
+            "unsold",
+            "sold",
+            "airdrop"
+          ]
+        },
+        "sale_type": {
+          "oneOf": [
+            {
+              "type": "string",
+              "enum": [
+                "auction",
+                "airdrop"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "winner_bid_eth": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "raw_site_data_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "image": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "real_artwork": {
+          "type": "boolean"
+        },
+        "bonus_tokens": {
+          "oneOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "prev_day": {
+          "oneOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "next_day": {
+          "oneOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "region": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "main_color": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "main_color_name": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "twitter_trend": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "trending_crypto": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "trending_nft": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "new_coin": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "secret_hash": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

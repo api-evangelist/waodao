@@ -1,0 +1,370 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://waodao.apievangelist.com/json-schema/waodao-token.json",
+  "title": "TokenResponse",
+  "description": "Derived verbatim from components.schemas.TokenResponse in openapi/waodao-agent-api-openapi.json (OpenAPI 3.1.0, JSON Schema 2020-12 dialect).",
+  "type": "object",
+  "required": [
+    "project",
+    "schema",
+    "schema_url",
+    "day",
+    "date",
+    "timestamp",
+    "name",
+    "description",
+    "image",
+    "external_url",
+    "real_artwork",
+    "bonus_tokens",
+    "links",
+    "attributes",
+    "waodao",
+    "market",
+    "news",
+    "trends",
+    "source"
+  ],
+  "properties": {
+    "project": {
+      "type": "string",
+      "example": "WAODAO"
+    },
+    "schema": {
+      "type": "string",
+      "example": "waodao-token@1"
+    },
+    "schema_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "day": {
+      "type": "integer",
+      "minimum": 1,
+      "example": 1
+    },
+    "date": {
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "timestamp": {
+      "oneOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "name": {
+      "type": "string",
+      "example": "WAO ART #1"
+    },
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "uri"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "external_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "real_artwork": {
+      "type": "boolean"
+    },
+    "bonus_tokens": {
+      "oneOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "string",
+            "format": "uri"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "attributes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Attribute"
+      }
+    },
+    "waodao": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "type": "string"
+        },
+        "schema_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "version": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "day": {
+          "type": "integer"
+        },
+        "links": {
+          "type": "object",
+          "additionalProperties": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "hashes": {
+          "type": "object",
+          "additionalProperties": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "market": {
+      "type": "object",
+      "properties": {
+        "chain": {
+          "type": "string"
+        },
+        "chain_id": {
+          "type": "integer"
+        },
+        "contract": {
+          "type": "string"
+        },
+        "token_id": {
+          "type": "string"
+        },
+        "sale_status": {
+          "type": "string"
+        },
+        "sale_type": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "winner_bid_eth": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "collector_address": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sale_transaction_url": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "drop_transaction_url": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "contract_token_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "marketplace": {
+          "type": "string"
+        },
+        "collection_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "marketplace_url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": true
+    },
+    "news": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/NewsItem"
+      }
+    },
+    "trends": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "raw_site_data_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "agent_api_url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "Attribute": {
+      "type": "object",
+      "required": [
+        "trait_type",
+        "value"
+      ],
+      "properties": {
+        "display_type": {
+          "type": "string"
+        },
+        "trait_type": {
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "NewsItem": {
+      "type": "object",
+      "required": [
+        "region",
+        "key",
+        "text",
+        "url"
+      ],
+      "properties": {
+        "region": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "text": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "url": {
+          "oneOf": [
+            {
+              "type": "string",
+              "description": "Absolute source URL when available; an empty string means no source URL was supplied."
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+    "info": {
+        "name": "WAODAO Agent API",
+        "description": "Five public, read-only WAODAO requests for ArtChain traversal, token metadata, field semantics, and WAO liquidity pool discovery. No authentication is required.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "https://waodao.ai",
+            "type": "string"
+        },
+        {
+            "key": "day",
+            "value": "1",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "List ArtChain days",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": "{{baseUrl}}/api/v1/waodao/index",
+                "description": "Start here. Returns the compact index of every published WAODAO day."
+            }
+        },
+        {
+            "name": "Get latest ArtChain day",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": "{{baseUrl}}/api/v1/waodao/latest",
+                "description": "Returns metadata for the latest published day."
+            }
+        },
+        {
+            "name": "Get one ArtChain day",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": "{{baseUrl}}/api/v1/waodao/token/{{day}}",
+                "description": "Returns agent-friendly metadata for one published day."
+            }
+        },
+        {
+            "name": "Read Agent API schema",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": "{{baseUrl}}/api/v1/waodao/schema",
+                "description": "Returns field semantics and discovery links."
+            }
+        },
+        {
+            "name": "List WAO liquidity pools",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": "{{baseUrl}}/api/v1/waodao/pools",
+                "description": "Returns official WAO token deployments and registered pool entry points."
+            }
+        }
+    ]
+}

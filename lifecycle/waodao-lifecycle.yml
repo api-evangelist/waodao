@@ -1,0 +1,64 @@
+generated: '2026-08-09'
+method: searched
+source: >-
+  https://waodao.ai/ai-agents + https://waodao.ai/openapi.json +
+  https://waodao.gitbook.io/docs/development/roadmap
+versioning:
+  scheme: uri-path
+  current: v1
+  base_path: /api/v1/waodao
+  spec_version: 1.0.0
+  notes: >-
+    The API version is carried in the URI path (`/api/v1/waodao/...`); the OpenAPI `info.version`
+    is 1.0.0. Payloads additionally carry their own schema identifiers — `waodao-agent-api@1`
+    (schema endpoint), `waodao-token@1` (token response) and `waodao-artchain@1` (the `waodao`
+    metadata extension block) — so agents can pin on the payload contract as well as the path.
+  payload_schema_ids:
+    - waodao-agent-api@1
+    - waodao-token@1
+    - waodao-artchain@1
+deprecation:
+  policy_documented: false
+  sunset_header: false
+  notes: >-
+    No deprecation or sunset (RFC 8594) policy is published, and no operation in the OpenAPI is
+    marked `deprecated`. The 3.0.2 contract at /openapi-3.0.json is published as a compatibility
+    document for importers that do not support 3.1 — it is a parallel representation, not a
+    deprecated version.
+deprecated_operations: []
+status_page:
+  published: false
+  notes: No status page or uptime dashboard is published; https://waodao.ai/status returns 404.
+sla:
+  documented: false
+changelog:
+  published: false
+  notes: >-
+    No dated API changelog. The GitBook roadmap page carries a dated project history
+    (2023 launch through the 2026 agent-readability work) but is a roadmap, not a release log.
+roadmap:
+  url: https://waodao.gitbook.io/docs/development/roadmap
+  notes: >-
+    Dated project roadmap by year/quarter, including the 2026 machine-readability milestone
+    (llms.txt, OpenAPI, sitemap, robots.txt, Agent API endpoints) and the long-term HACM Protocol /
+    WAOSHI agent direction.
+content_lifecycle:
+  cadence: daily
+  first_day: 1
+  latest_day_observed: 1272
+  total_days_observed: 1272
+  observed_on: '2026-08-09'
+  notes: >-
+    One ArtChain day (one NFT) is published per day since 2023-02-14; the collection is additive,
+    so `latest_day` grows and prior days are immutable. Agents should traverse via
+    `links.prev`/`links.next` rather than guessing day numbers.
+support:
+  email: info@waodao.ai
+  channels:
+    - https://t.me/waodao_ai
+    - https://discord.gg/hsrkWhvDeS
+    - https://twitter.com/waodao_ai
+x-evidence:
+  - {url: 'https://waodao.ai/status', http_status: 404}
+  - {url: 'https://waodao.ai/changelog', http_status: 404}
+  - {url: 'https://waodao.gitbook.io/docs/development/roadmap', http_status: 200}

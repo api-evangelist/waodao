@@ -1,0 +1,52 @@
+generated: '2026-08-09'
+method: derived
+source: openapi/waodao-agent-api-openapi.json
+docs: https://waodao.ai/ai-agents#api-reference
+format: json
+rfc9457: false
+envelope:
+  media_type: application/json
+  schema: ErrorResponse
+  shape: '{ "error": string, "code": integer }'
+  additional_properties: true
+  note: >-
+    WAODAO returns a flat error envelope rather than RFC 9457 application/problem+json. `error` is a
+    human-readable message; `code` repeats the HTTP status. Error responses carry the same
+    `Access-Control-Allow-Origin: *` and `Cache-Control` headers as success responses.
+problems:
+  - status: 400
+    title: Day is required
+    media_type: application/json
+    schema: ErrorResponse
+    example: '{"error": "Day is required", "code": 400}'
+    meaning: The `day` path parameter is missing or is not a positive integer.
+    remediation: >-
+      Pass an integer day number that exists in the ArtChain index. Read
+      /api/v1/waodao/index (listArtChainDays) and use `latest_day` / `items[].day` rather than
+      guessing a day number.
+    source_operation: openapi/waodao-agent-api-openapi.json#getArtChainDay
+  - status: 404
+    title: Day not found
+    media_type: application/json
+    schema: ErrorResponse
+    examples:
+      - '{"error": "Day not found", "code": 404}'
+      - '{"error": "No published WAODAO days found", "code": 404}'
+    meaning: The requested ArtChain day is not published (or, on getLatestArtChainDay, no published days were found).
+    remediation: >-
+      Re-read the index to confirm the highest published day, or traverse with the token response
+      `links.prev` / `links.next` values, which are null at the ends of the chain.
+    source_operations:
+      - openapi/waodao-agent-api-openapi.json#getArtChainDay
+      - openapi/waodao-agent-api-openapi.json#getLatestArtChainDay
+coverage:
+  operations_total: 5
+  operations_with_declared_errors: 2
+  undeclared:
+    - openapi/waodao-agent-api-openapi.json#listArtChainDays
+    - openapi/waodao-agent-api-openapi.json#getAgentApiSchema
+    - openapi/waodao-agent-api-openapi.json#listWaoLiquidityPools
+  note: >-
+    Three operations declare only a 200 response in the spec; no 429 / 5xx problem types are
+    declared anywhere in the contract, and no numeric rate limit is published (see
+    conventions/waodao-conventions.yml).

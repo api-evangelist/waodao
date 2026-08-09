@@ -1,0 +1,117 @@
+{
+    "aid": "waodao.ai",
+    "type": "Index",
+    "name": "WAODAO",
+    "description": "Machine-readable entry points for the WAODAO daily Human + AI ArtChain, NFT metadata, WAO token deployments, and official liquidity pools.",
+    "image": "https://waodao.ai/img/logo.png",
+    "tags": [
+        "AI Agents",
+        "ArtChain",
+        "Human and AI",
+        "NFT Metadata",
+        "On-chain Culture",
+        "Liquidity Pools",
+        "Web3"
+    ],
+    "created": "2026-07-23",
+    "modified": "2026-07-23",
+    "url": "https://waodao.ai/apis.json",
+    "specificationVersion": "0.19",
+    "apis": [
+        {
+            "aid": "waodao.ai:agent-api",
+            "name": "WAODAO Agent API",
+            "description": "Public read-only JSON API for traversing the WAODAO daily Human + AI ArtChain and discovering official WAO token deployments and liquidity pools.",
+            "image": "https://waodao.ai/img/logo.png",
+            "humanURL": "https://waodao.ai/ai-agents",
+            "baseURL": "https://waodao.ai/api/v1/waodao",
+            "tags": [
+                "AI Agents",
+                "ArtChain",
+                "NFT Metadata",
+                "OpenAPI",
+                "Liquidity Pools"
+            ],
+            "properties": [
+                {
+                    "type": "Documentation",
+                    "name": "Human-readable API documentation",
+                    "url": "https://waodao.ai/ai-agents"
+                },
+                {
+                    "type": "GettingStarted",
+                    "name": "Agent API getting started",
+                    "url": "https://waodao.ai/ai-agents#api-reference"
+                },
+                {
+                    "type": "OpenAPI",
+                    "name": "OpenAPI 3.1 contract",
+                    "mediaType": "application/vnd.oai.openapi+json;version=3.1",
+                    "url": "https://waodao.ai/openapi.json"
+                },
+                {
+                    "type": "OpenAPI",
+                    "name": "OpenAPI 3.0.2 compatibility contract",
+                    "mediaType": "application/vnd.oai.openapi+json;version=3.0",
+                    "url": "https://waodao.ai/openapi-3.0.json"
+                },
+                {
+                    "type": "PostmanCollection",
+                    "name": "Postman Collection",
+                    "mediaType": "application/json",
+                    "url": "https://waodao.ai/postman-collection.json"
+                },
+                {
+                    "type": "Authentication",
+                    "name": "Public access policy",
+                    "url": "https://waodao.ai/ai-agents#api-access"
+                },
+                {
+                    "type": "RateLimits",
+                    "name": "Fair-use and caching guidance",
+                    "url": "https://waodao.ai/ai-agents#api-access"
+                },
+                {
+                    "type": "Support",
+                    "name": "WAODAO API support",
+                    "url": "https://waodao.ai/ai-agents#api-access"
+                },
+                {
+                    "type": "Twitter",
+                    "name": "WAODAO on X",
+                    "url": "https://x.com/waodao_ai"
+                },
+                {
+                    "type": "X-APICatalog",
+                    "name": "RFC 9727 API catalog",
+                    "mediaType": "application/linkset+json",
+                    "url": "https://waodao.ai/.well-known/api-catalog"
+                },
+                {
+                    "type": "X-llms-txt",
+                    "name": "LLM-readable site and API map",
+                    "mediaType": "text/plain",
+                    "url": "https://waodao.ai/llms.txt"
+                }
+            ],
+            "contact": [
+                {
+                    "FN": "WAODAO",
+                    "organizationName": "WAODAO",
+                    "email": "info@waodao.ai",
+                    "X-twitter": "waodao_ai",
+                    "url": "https://waodao.ai/ai-agents"
+                }
+            ]
+        }
+    ],
+    "maintainers": [
+        {
+            "FN": "WAODAO",
+            "organizationName": "WAODAO",
+            "email": "info@waodao.ai",
+            "X-twitter": "waodao_ai",
+            "url": "https://waodao.ai/ai-agents"
+        }
+    ]
+}

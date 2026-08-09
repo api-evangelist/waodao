@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://waodao.apievangelist.com/json-schema/waodao-pools.json",
+  "title": "PoolsResponse",
+  "description": "Derived verbatim from components.schemas.PoolsResponse in openapi/waodao-agent-api-openapi.json (OpenAPI 3.1.0, JSON Schema 2020-12 dialect).",
+  "type": "object",
+  "required": [
+    "project",
+    "schema",
+    "purpose",
+    "description",
+    "docs_url",
+    "links",
+    "summary",
+    "market_entry",
+    "wao_token",
+    "data_policy",
+    "items"
+  ],
+  "properties": {
+    "project": {
+      "type": "string",
+      "example": "WAODAO"
+    },
+    "schema": {
+      "type": "string",
+      "example": "waodao-pools@1"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "docs_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "total_pools": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "chains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dexes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "market_entry": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "wao_token": {
+      "type": "object",
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "example": "WAO"
+        },
+        "name": {
+          "type": "string",
+          "example": "WAODAO"
+        },
+        "deployments": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "data_policy": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/PoolItem"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "PoolItem": {
+      "type": "object",
+      "required": [
+        "pair",
+        "type",
+        "category",
+        "chain",
+        "dex",
+        "protocol",
+        "pool_identifier",
+        "pool_url",
+        "description",
+        "status"
+      ],
+      "properties": {
+        "pair": {
+          "type": "string",
+          "example": "WAO/ETH"
+        },
+        "type": {
+          "type": "string",
+          "example": "dex_pool"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "core_liquidity_route",
+            "friendly_pool"
+          ]
+        },
+        "chain": {
+          "type": "string"
+        },
+        "dex": {
+          "type": "string"
+        },
+        "protocol": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pool_identifier": {
+          "type": "string"
+        },
+        "pool_contract": {
+          "type": "string"
+        },
+        "pool_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "example": "active"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://waodao.apievangelist.com/json-schema/waodao-error.json",
+  "title": "ErrorResponse",
+  "description": "Derived verbatim from components.schemas.ErrorResponse in openapi/waodao-agent-api-openapi.json (OpenAPI 3.1.0, JSON Schema 2020-12 dialect).",
+  "type": "object",
+  "required": [
+    "error",
+    "code"
+  ],
+  "properties": {
+    "error": {
+      "type": "string"
+    },
+    "code": {
+      "type": "integer"
+    }
+  },
+  "additionalProperties": true
+}

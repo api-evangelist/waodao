@@ -1,11 +1,18 @@
 name: WAODAO
 description: >-
-  WAODAO Agent API is a public, read-only JSON API for traversing the WAODAO daily Human + AI ArtChain and discovering
-  official WAO token deployments and liquidity pools across Ethereum and Solana. One AI-generated NFT is created per day
-  from world news, digital trends, human input, and AI art.
+  WAODAO is a daily Human + AI "ArtChain": since 14 February 2023 one AI-generated NFT has been minted every day from
+  world news signals, digital trends, human input and AI art, producing an on-chain cultural archive that stood at
+  1,272 published days when the index was read on 2026-08-09. The WAODAO Agent API is a public, read-only JSON API — five GET operations, no account, no API key, no
+  authentication, CORS enabled — for traversing that ArtChain day by day and for discovering the official WAO token
+  deployments (Ethereum ERC-20 and a Wormhole-bridged Solana SPL token) and the registered DEX liquidity pools across
+  Uniswap, Balancer and Meteora. The project publishes an unusually complete machine-readable discovery surface for its
+  size: OpenAPI 3.1 and a 3.0.2 compatibility contract, an APIs.json index at both /apis.json and the /.well-known
+  alias, an RFC 9727 API catalog advertised on every response via a Link header, a Postman collection, and llms.txt on
+  both the site and the GitBook docs.
+image: https://waodao.ai/img/logo.png
 url: https://waodao.apievangelist.com/apis.yml
 created: '2026-07-24'
-modified: '2026-07-24'
+modified: '2026-08-09'
 specificationVersion: '0.21'
 tags:
   - AI Agents
@@ -16,11 +23,17 @@ tags:
   - Liquidity Pools
   - Web3
   - OpenAPI
+  - Ethereum
+  - Solana
+  - Agent Native
+  - Digital Art
 apis:
   - name: WAODAO Agent API
     description: >-
       Public, read-only JSON API for traversing the WAODAO daily Human + AI ArtChain and discovering official WAO token
-      deployments and liquidity pools. Five GET operations: index, latest, token/{day}, schema, and pools.
+      deployments and liquidity pools. Five GET operations: index, latest, token/{day}, schema, and pools. No
+      authentication, CORS open, responses cacheable for 300 seconds, and every response carries an RFC 9727
+      api-catalog Link header.
     humanURL: https://waodao.ai/ai-agents
     baseURL: https://waodao.ai/api/v1/waodao
     tags:
@@ -34,6 +47,12 @@ apis:
       - OpenAPI
     properties:
       - type: OpenAPI
+        name: OpenAPI 3.1 contract (harvested)
+        url: openapi/waodao-agent-api-openapi.json
+      - type: OpenAPI
+        name: OpenAPI 3.0.2 compatibility contract (harvested)
+        url: openapi/waodao-agent-api-openapi-3.0.json
+      - type: OpenAPI
         url: https://waodao.ai/openapi.json
       - type: OpenAPI
         url: https://waodao.ai/openapi-3.0.json
@@ -43,11 +62,103 @@ apis:
         url: https://waodao.ai/llms.txt
       - type: Documentation
         url: https://waodao.ai/ai-agents
+      - type: APIReference
+        name: Five read-only endpoints
+        url: https://waodao.ai/ai-agents#api-reference
+      - type: GettingStarted
+        name: Agent API getting started
+        url: https://waodao.ai/ai-agents#api-reference
+      - type: Authentication
+        name: Public access policy (no authentication required)
+        url: https://waodao.ai/ai-agents#api-access
+      - type: RateLimits
+        name: Fair-use and caching guidance
+        url: https://waodao.ai/ai-agents#api-access
 maintainers:
   - FN: WAODAO
+    email: info@waodao.ai
     url: https://waodao.ai
 generated:
   by: apis.io/add
   model: claude-opus-4-8
   confidence: 98
   at: '2026-07-24T07:42:30.868Z'
+x-enrichment:
+  date: '2026-08-09'
+  status: enriched
+  artifacts_added: 28
+  pass: local-v1
+common:
+- type: DeveloperPortal
+  name: WAODAO for AI Agents
+  url: https://waodao.ai/ai-agents
+- type: Documentation
+  name: WAODAO GitBook documentation
+  url: https://waodao.gitbook.io/docs/
+- type: Support
+  name: API support and access policy
+  url: https://waodao.ai/ai-agents#api-access
+- type: Community
+  name: WAODAO Discord
+  url: https://discord.gg/hsrkWhvDeS
+- type: Telegram
+  url: https://t.me/waodao_ai
+- type: Twitter
+  url: https://twitter.com/waodao_ai
+- type: Roadmap
+  name: WAODAO roadmap
+  url: https://waodao.gitbook.io/docs/development/roadmap
+- type: Disclaimer
+  name: WAODAO project disclaimer (risk, IP, content policy)
+  url: https://waodao.gitbook.io/docs/disclaimer
+- type: Postman
+  name: WAODAO Agent API Postman collection
+  url: postman/waodao-agent-api.postman_collection.json
+- type: APIsJSON
+  name: Provider-published APIs.json 0.19 index
+  url: https://waodao.ai/apis.json
+- type: APICatalog
+  name: RFC 9727 API catalog
+  url: https://waodao.ai/.well-known/api-catalog
+- type: WellKnown
+  url: well-known/waodao-well-known.yml
+- type: LLMsTxt
+  url: llms/waodao-llms.txt
+- type: Authentication
+  url: authentication/waodao-authentication.yml
+- type: Conventions
+  url: conventions/waodao-conventions.yml
+- type: ErrorCatalog
+  url: errors/waodao-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/waodao-lifecycle.yml
+- type: Conformance
+  url: conformance/waodao-conformance.yml
+- type: DataModel
+  url: data-model/waodao-data-model.yml
+- type: MCPServer
+  url: mcp/waodao-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Overlay
+  url: overlays/waodao-agent-api-overlay.yaml
+- type: Examples
+  url: examples/waodao-token-day-1-example.json
+- type: Examples
+  url: examples/waodao-pools-example.json
+- type: Examples
+  url: examples/waodao-schema-example.json
+- type: JSONSchema
+  url: json-schema/waodao-token.json
+- type: JSONSchema
+  url: json-schema/waodao-index.json
+- type: JSONSchema
+  url: json-schema/waodao-pools.json
+- type: JSONSchema
+  url: json-schema/waodao-schema.json
+- type: JSONSchema
+  url: json-schema/waodao-error.json
+- type: AgenticAccess
+  url: agentic-access/waodao-agentic-access.yml
+- type: DomainSecurity
+  url: security/waodao-domain-security.yml

@@ -1,0 +1,58 @@
+# WAODAO
+
+> WAODAO is a daily AI ArtChain: one NFT per day generated from world news, digital trends, human input, and AI art. The project also has live WAO liquidity pools across Ethereum and Solana.
+
+## Why AI Agents May Care
+
+- WAODAO is a 3+ year daily ArtChain: a long-running cultural dataset where each day becomes an NFT artifact.
+- It sits at the edge of modern art, human/AI co-creation, world news, web3 identity, and collectible on-chain history.
+- Agents can traverse the collection programmatically, compare days, curate themes, explain historical context, and build collector memory around specific tokens.
+- WAO pools provide on-chain market surfaces. Agents can discover liquidity routes and reason about pool deployment or liquidity provision opportunities.
+- DEX arbitrage-driven trading activity can create fee flows in pools, but absolute revenue is variable and not projected by this API.
+
+## Start Here
+
+- [ArtChain index](https://waodao.ai/api/v1/waodao/index): Prebuilt compact list of all published WAODAO days.
+- [Latest day](https://waodao.ai/api/v1/waodao/latest): Latest published ArtChain day.
+- [Token endpoint](https://waodao.ai/api/v1/waodao/token/1): Agent-readable metadata for one day. Replace `1` with any published day.
+- [Pools](https://waodao.ai/api/v1/waodao/pools): WAO token deployments and live liquidity pools.
+- [Schema](https://waodao.ai/api/v1/waodao/schema): Field descriptions for the Agent API.
+- [AI Agent documentation](https://waodao.ai/ai-agents): Human-readable access policy, endpoint guide, examples, and discovery files.
+
+## Machine-Readable Discovery
+
+- [OpenAPI 3.1](https://waodao.ai/openapi.json): Canonical API contract with operations, response schemas, and live examples.
+- [OpenAPI 3.0.2](https://waodao.ai/openapi-3.0.json): Compatibility contract for older importers and API marketplaces.
+- [APIs.json](https://waodao.ai/apis.json): Canonical APIs.json 0.19 operations index.
+- [APIs.json well-known alias](https://waodao.ai/.well-known/apis.json): Automatic discovery alias used by API crawlers.
+- [RFC 9727 API Catalog](https://waodao.ai/.well-known/api-catalog): Linkset listing all public endpoints and machine-readable contracts.
+- [Postman Collection](https://waodao.ai/postman-collection.json): Importable collection containing all five public requests.
+
+## Recommended Agent Workflow
+
+1. Read `https://waodao.ai/api/v1/waodao/index`.
+2. Traverse days through `items[].metadata_url` or token `links.prev` / `links.next`.
+3. Use `market.marketplace_url` to inspect an NFT purchase path.
+4. For paid auction transfers, read `market.sale_transaction_url`; for NFT airdrops, read `market.drop_transaction_url`.
+5. Read `https://waodao.ai/api/v1/waodao/pools` to verify WAO token deployments and liquidity routes.
+
+## Human Pages
+
+- [WAODAO homepage](https://waodao.ai/)
+- [Grants](https://waodao.ai/grants)
+- [Investors](https://waodao.ai/investors)
+- [AI agents](https://waodao.ai/ai-agents)
+- [WAO token](https://waodao.ai/token)
+- [Holders Hub](https://waodao.ai/holders): Public holder surface for NFT holders, WAO holders, Friendly Pool participants, market infrastructure, and agent-readable WAO liquidity context.
+- [WAODAO scan](https://waodao.ai/scan)
+- [Example scan day](https://waodao.ai/scan/1)
+- [OpenSea collection](https://opensea.io/collection/waodao)
+- [Docs](https://waodao.gitbook.io/docs/)
+
+## Access Notes
+
+- The Agent API is public and read-only.
+- No account, API key, payment, or authentication is required.
+- JSON endpoints send `Access-Control-Allow-Origin: *` for cross-origin clients.
+- No numeric request quota is currently published. Use fair-use access, avoid high-frequency crawling, prefer the compact index, and cache stable token responses.
+- Support contact: `info@waodao.ai`.
