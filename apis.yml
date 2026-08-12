@@ -28,52 +28,102 @@ tags:
   - Agent Native
   - Digital Art
 apis:
-  - name: WAODAO Agent API
-    description: >-
-      Public, read-only JSON API for traversing the WAODAO daily Human + AI ArtChain and discovering official WAO token
-      deployments and liquidity pools. Five GET operations: index, latest, token/{day}, schema, and pools. No
-      authentication, CORS open, responses cacheable for 300 seconds, and every response carries an RFC 9727
-      api-catalog Link header.
-    humanURL: https://waodao.ai/ai-agents
-    baseURL: https://waodao.ai/api/v1/waodao
-    tags:
-      - AI Agents
-      - ArtChain
-      - Human and AI
-      - NFT Metadata
-      - On-chain Culture
-      - Liquidity Pools
-      - Web3
-      - OpenAPI
-    properties:
-      - type: OpenAPI
-        name: OpenAPI 3.1 contract (harvested)
-        url: openapi/waodao-agent-api-openapi.json
-      - type: OpenAPI
-        name: OpenAPI 3.0.2 compatibility contract (harvested)
-        url: openapi/waodao-agent-api-openapi-3.0.json
-      - type: OpenAPI
-        url: https://waodao.ai/openapi.json
-      - type: OpenAPI
-        url: https://waodao.ai/openapi-3.0.json
-      - type: PostmanCollection
-        url: https://waodao.ai/postman-collection.json
-      - type: LLMsTxt
-        url: https://waodao.ai/llms.txt
-      - type: Documentation
-        url: https://waodao.ai/ai-agents
-      - type: APIReference
-        name: Five read-only endpoints
-        url: https://waodao.ai/ai-agents#api-reference
-      - type: GettingStarted
-        name: Agent API getting started
-        url: https://waodao.ai/ai-agents#api-reference
-      - type: Authentication
-        name: Public access policy (no authentication required)
-        url: https://waodao.ai/ai-agents#api-access
-      - type: RateLimits
-        name: Fair-use and caching guidance
-        url: https://waodao.ai/ai-agents#api-access
+- aid: waodao:waodao-artchain-api
+  name: WAODAO Art Chain API
+  description: Traverse the daily Human + AI ArtChain.
+  humanURL: https://waodao.ai/ai-agents
+  baseURL: https://waodao.ai/api/v1/waodao
+  tags:
+  - ArtChain
+  properties:
+  - type: OpenAPI
+    url: openapi/waodao-artchain-api-openapi.yml
+  - type: PostmanCollection
+    url: https://waodao.ai/postman-collection.json
+  - type: LLMsTxt
+    url: https://waodao.ai/llms.txt
+  - type: Documentation
+    url: https://waodao.ai/ai-agents
+  - type: APIReference
+    url: https://waodao.ai/ai-agents#api-reference
+  - type: GettingStarted
+    url: https://waodao.ai/ai-agents#api-reference
+  - type: Authentication
+    url: https://waodao.ai/ai-agents#api-access
+  - type: RateLimits
+    url: https://waodao.ai/ai-agents#api-access
+- aid: waodao:waodao-liquidity-pools-api
+  name: WAODAO Liquidity Pools API
+  description: Discover official WAO token deployments and registered DEX pools.
+  humanURL: https://waodao.ai/ai-agents
+  baseURL: https://waodao.ai/api/v1/waodao
+  tags:
+  - Liquidity Pools
+  properties:
+  - type: OpenAPI
+    url: openapi/waodao-liquidity-pools-api-openapi.yml
+  - type: PostmanCollection
+    url: https://waodao.ai/postman-collection.json
+  - type: LLMsTxt
+    url: https://waodao.ai/llms.txt
+  - type: Documentation
+    url: https://waodao.ai/ai-agents
+  - type: APIReference
+    url: https://waodao.ai/ai-agents#api-reference
+  - type: GettingStarted
+    url: https://waodao.ai/ai-agents#api-reference
+  - type: Authentication
+    url: https://waodao.ai/ai-agents#api-access
+  - type: RateLimits
+    url: https://waodao.ai/ai-agents#api-access
+- aid: waodao:waodao-schema-api
+  name: WAODAO Schema API
+  description: Read WAODAO-specific field semantics and discovery links.
+  humanURL: https://waodao.ai/ai-agents
+  baseURL: https://waodao.ai/api/v1/waodao
+  tags:
+  - Schema
+  properties:
+  - type: OpenAPI
+    url: openapi/waodao-schema-api-openapi.yml
+  - type: PostmanCollection
+    url: https://waodao.ai/postman-collection.json
+  - type: LLMsTxt
+    url: https://waodao.ai/llms.txt
+  - type: Documentation
+    url: https://waodao.ai/ai-agents
+  - type: APIReference
+    url: https://waodao.ai/ai-agents#api-reference
+  - type: GettingStarted
+    url: https://waodao.ai/ai-agents#api-reference
+  - type: Authentication
+    url: https://waodao.ai/ai-agents#api-access
+  - type: RateLimits
+    url: https://waodao.ai/ai-agents#api-access
+- aid: waodao:waodao-token-metadata-api
+  name: WAODAO Token Metadata API
+  description: Read agent-friendly metadata for a published WAODAO day.
+  humanURL: https://waodao.ai/ai-agents
+  baseURL: https://waodao.ai/api/v1/waodao
+  tags:
+  - Token Metadata
+  properties:
+  - type: OpenAPI
+    url: openapi/waodao-token-metadata-api-openapi.yml
+  - type: PostmanCollection
+    url: https://waodao.ai/postman-collection.json
+  - type: LLMsTxt
+    url: https://waodao.ai/llms.txt
+  - type: Documentation
+    url: https://waodao.ai/ai-agents
+  - type: APIReference
+    url: https://waodao.ai/ai-agents#api-reference
+  - type: GettingStarted
+    url: https://waodao.ai/ai-agents#api-reference
+  - type: Authentication
+    url: https://waodao.ai/ai-agents#api-access
+  - type: RateLimits
+    url: https://waodao.ai/ai-agents#api-access
 maintainers:
   - FN: WAODAO
     email: info@waodao.ai
