@@ -10,7 +10,7 @@ description: >-
   alias, an RFC 9727 API catalog advertised on every response via a Link header, a Postman collection, and llms.txt on
   both the site and the GitBook docs.
 image: https://waodao.ai/img/logo.png
-url: https://waodao.apievangelist.com/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/waodao/refs/heads/main/apis.yml
 created: '2026-07-24'
 modified: '2026-08-09'
 specificationVersion: '0.21'
