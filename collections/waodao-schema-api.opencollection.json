@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Waodao Schema API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Schema",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Describe WAODAO Agent API fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://waodao.ai/api/v1/waodao/schema"
+          },
+          "docs": "Returns WAODAO-specific field semantics and links to every API and discovery surface."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

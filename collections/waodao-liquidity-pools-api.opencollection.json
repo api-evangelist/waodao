@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Waodao Liquidity Pools API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Liquidity Pools",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List official WAO liquidity pools",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://waodao.ai/api/v1/waodao/pools"
+          },
+          "docs": "Returns static registry data for WAO token deployments and official pool entry points. Live prices, TVL, and swap quotes are intentionally excluded."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Waodao Token Metadata API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Token Metadata",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the latest published WAODAO day",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://waodao.ai/api/v1/waodao/latest"
+          },
+          "docs": "Returns the same metadata shape as the token endpoint for the newest published ArtChain day."
+        },
+        {
+          "info": {
+            "name": "Get metadata for one WAODAO day",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://waodao.ai/api/v1/waodao/token/:day",
+            "params": [
+              {
+                "name": "day",
+                "value": "",
+                "type": "path",
+                "description": "Published ArtChain day number and NFT token ID."
+              }
+            ]
+          },
+          "docs": "Returns OpenSea-compatible NFT metadata plus WAODAO traversal, market, news, trend, and source blocks. Paid auction transfers use market.sale_transaction_url; NFT airdrops use market.drop_transaction_url."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

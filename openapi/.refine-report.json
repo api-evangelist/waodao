@@ -1,0 +1,26 @@
+{
+  "provider": "waodao",
+  "sources": [
+    "waodao-artchain-api-openapi.yml",
+    "waodao-liquidity-pools-api-openapi.yml",
+    "waodao-schema-api-openapi.yml",
+    "waodao-token-metadata-api-openapi.yml"
+  ],
+  "outputs": [
+    "waodao-artchain-api-openapi.yml",
+    "waodao-liquidity-pools-api-openapi.yml",
+    "waodao-schema-api-openapi.yml",
+    "waodao-token-metadata-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "waodao-artchain-api-openapi.yml: upgraded openapi 3.0.2 -> OpenAPI 3.2.0",
+    "waodao-liquidity-pools-api-openapi.yml: upgraded openapi 3.0.2 -> OpenAPI 3.2.0",
+    "waodao-schema-api-openapi.yml: upgraded openapi 3.0.2 -> OpenAPI 3.2.0",
+    "waodao-token-metadata-api-openapi.yml: upgraded openapi 3.0.2 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": []
+}

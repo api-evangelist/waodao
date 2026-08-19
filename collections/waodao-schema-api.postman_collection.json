@@ -1,0 +1,125 @@
+{
+  "item": [
+    {
+      "id": "602f60b6-cf02-46de-aef2-976a9b11f87f",
+      "name": "Schema",
+      "description": {
+        "content": "Read WAODAO-specific field semantics and discovery links.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ef2db076-c4b1-4247-83e7-118903d27db7",
+          "name": "Describe WAODAO Agent API fields",
+          "request": {
+            "name": "Describe WAODAO Agent API fields",
+            "description": {
+              "content": "Returns WAODAO-specific field semantics and links to every API and discovery surface.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "waodao",
+                "schema"
+              ],
+              "host": [
+                "{{api-v1-waodao-schema-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cd2bf5b2-2bf4-47b6-8fc1-58b706730f4e",
+              "name": "WAODAO Agent API field guide.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "waodao",
+                    "schema"
+                  ],
+                  "host": [
+                    "{{api-v1-waodao-schema-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Public cross-origin access is enabled.",
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "disabled": false,
+                  "description": "Public caching guidance for this response.",
+                  "key": "Cache-Control",
+                  "value": "public, max-age=300"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"summary\": \"Live WAODAO response\",\n  \"externalValue\": \"https://waodao.ai/api/v1/waodao/schema\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://waodao.ai",
+      "key": "baseUrl"
+    },
+    {
+      "type": "string",
+      "value": "https://waodao.ai",
+      "key": "api-v1-waodao-schema-Url"
+    }
+  ],
+  "info": {
+    "_postman_id": "2f551b8f-dc36-48cb-ab9d-acda7e501d37",
+    "name": "Waodao Schema API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Operations tagged Schema across 2 of this provider's published API definitions: waodao-agent-api-openapi-3.0.json, waodao-agent-api-openapi.json. Each path carries the servers of the definition it was published in.\n\nContact Support:\n Name: WAODAO\n Email: info@waodao.ai",
+      "type": "text/plain"
+    }
+  }
+}

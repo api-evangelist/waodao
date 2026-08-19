@@ -1,0 +1,268 @@
+{
+  "item": [
+    {
+      "id": "1761a21d-5b0b-4a8d-9985-5b6a1707cd8c",
+      "name": "ArtChain",
+      "description": {
+        "content": "Traverse the daily Human + AI ArtChain.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5e030d5c-b0e8-4b95-8069-1b3a20e81f4d",
+          "name": "List published WAODAO ArtChain days",
+          "request": {
+            "name": "List published WAODAO ArtChain days",
+            "description": {
+              "content": "Returns the compact prebuilt collection index. Start here for complete traversal and cache this response instead of crawling individual pages.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "waodao",
+                "index"
+              ],
+              "host": [
+                "{{api-v1-waodao-index-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "58c21e7d-7520-4e60-8353-5f9a2acfca16",
+              "name": "Compact ArtChain index snapshot.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "waodao",
+                    "index"
+                  ],
+                  "host": [
+                    "{{api-v1-waodao-index-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Public cross-origin access is enabled.",
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "disabled": false,
+                  "description": "Public caching guidance for this response.",
+                  "key": "Cache-Control",
+                  "value": "public, max-age=300"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"summary\": \"Live WAODAO response\",\n  \"externalValue\": \"https://waodao.ai/api/v1/waodao/index\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "42ce4166-51f4-431c-820a-11ddc56b7a9b",
+          "name": "Get the latest published WAODAO day",
+          "request": {
+            "name": "Get the latest published WAODAO day",
+            "description": {
+              "content": "Returns the same metadata shape as the token endpoint for the newest published ArtChain day.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "waodao",
+                "latest"
+              ],
+              "host": [
+                "{{api-v1-waodao-latest-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b5774e8-780e-4e83-81a8-6d00bf4fc942",
+              "name": "Latest published token metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "waodao",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{api-v1-waodao-latest-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Public cross-origin access is enabled.",
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "disabled": false,
+                  "description": "Public caching guidance for this response.",
+                  "key": "Cache-Control",
+                  "value": "public, max-age=300"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"summary\": \"Live WAODAO response\",\n  \"externalValue\": \"https://waodao.ai/api/v1/waodao/latest\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6c62adcb-3ed0-4c1d-bd77-bed8867d2849",
+              "name": "No published days were found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "waodao",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{api-v1-waodao-latest-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Public cross-origin access is enabled.",
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "disabled": false,
+                  "description": "Public caching guidance for this response.",
+                  "key": "Cache-Control",
+                  "value": "public, max-age=300"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"No published WAODAO days found\",\n  \"code\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://waodao.ai",
+      "key": "baseUrl"
+    },
+    {
+      "type": "string",
+      "value": "https://waodao.ai",
+      "key": "api-v1-waodao-index-Url"
+    },
+    {
+      "type": "string",
+      "value": "https://waodao.ai",
+      "key": "api-v1-waodao-latest-Url"
+    }
+  ],
+  "info": {
+    "_postman_id": "0c70400d-5f20-43a2-8f51-a57d03f13dab",
+    "name": "Waodao Art Chain API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Operations tagged ArtChain across 2 of this provider's published API definitions: waodao-agent-api-openapi-3.0.json, waodao-agent-api-openapi.json. Each path carries the servers of the definition it was published in.\n\nContact Support:\n Name: WAODAO\n Email: info@waodao.ai",
+      "type": "text/plain"
+    }
+  }
+}

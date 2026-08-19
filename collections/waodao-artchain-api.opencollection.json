@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Waodao Art Chain API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ArtChain",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List published WAODAO ArtChain days",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://waodao.ai/api/v1/waodao/index"
+          },
+          "docs": "Returns the compact prebuilt collection index. Start here for complete traversal and cache this response instead of crawling individual pages."
+        },
+        {
+          "info": {
+            "name": "Get the latest published WAODAO day",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://waodao.ai/api/v1/waodao/latest"
+          },
+          "docs": "Returns the same metadata shape as the token endpoint for the newest published ArtChain day."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

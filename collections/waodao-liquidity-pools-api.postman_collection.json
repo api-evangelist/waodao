@@ -1,0 +1,125 @@
+{
+  "item": [
+    {
+      "id": "0d4337ab-2104-4132-a8ef-21d09b79eb0f",
+      "name": "Liquidity Pools",
+      "description": {
+        "content": "Discover official WAO token deployments and registered DEX pools.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4e784a33-76c5-447b-977f-978999c8690e",
+          "name": "List official WAO liquidity pools",
+          "request": {
+            "name": "List official WAO liquidity pools",
+            "description": {
+              "content": "Returns static registry data for WAO token deployments and official pool entry points. Live prices, TVL, and swap quotes are intentionally excluded.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "waodao",
+                "pools"
+              ],
+              "host": [
+                "{{api-v1-waodao-pools-Url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "93e990cf-a8bf-4927-b457-29782f44bfa6",
+              "name": "Official WAO pool registry.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "waodao",
+                    "pools"
+                  ],
+                  "host": [
+                    "{{api-v1-waodao-pools-Url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Public cross-origin access is enabled.",
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "disabled": false,
+                  "description": "Public caching guidance for this response.",
+                  "key": "Cache-Control",
+                  "value": "public, max-age=300"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"summary\": \"Live WAODAO response\",\n  \"externalValue\": \"https://waodao.ai/api/v1/waodao/pools\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://waodao.ai",
+      "key": "baseUrl"
+    },
+    {
+      "type": "string",
+      "value": "https://waodao.ai",
+      "key": "api-v1-waodao-pools-Url"
+    }
+  ],
+  "info": {
+    "_postman_id": "9ea59b94-a1e9-4d70-8450-d43926bdaeea",
+    "name": "Waodao Liquidity Pools API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Operations tagged Liquidity Pools across 2 of this provider's published API definitions: waodao-agent-api-openapi-3.0.json, waodao-agent-api-openapi.json. Each path carries the servers of the definition it was published in.\n\nContact Support:\n Name: WAODAO\n Email: info@waodao.ai",
+      "type": "text/plain"
+    }
+  }
+}

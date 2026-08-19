@@ -1,0 +1,177 @@
+openapi: 3.2.0
+info:
+  title: Waodao Liquidity Pools API
+  version: 1.0.0
+  contact:
+    name: WAODAO
+    url: https://waodao.ai/ai-agents
+    email: info@waodao.ai
+  description: 'Operations tagged Liquidity Pools across 2 of this provider''s published API definitions: waodao-agent-api-openapi-3.0.json, waodao-agent-api-openapi.json. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://waodao.ai
+  description: WAODAO production API
+security: []
+tags:
+- name: Liquidity Pools
+  description: Discover official WAO token deployments and registered DEX pools.
+paths:
+  /api/v1/waodao/pools:
+    servers:
+    - url: https://waodao.ai
+      description: WAODAO production API
+    get:
+      operationId: listWaoLiquidityPools
+      x-capability: waodao.pools.read
+      tags:
+      - Liquidity Pools
+      summary: List official WAO liquidity pools
+      description: Returns static registry data for WAO token deployments and official pool entry points. Live prices, TVL, and swap quotes are intentionally excluded.
+      responses:
+        '200':
+          description: Official WAO pool registry.
+          headers:
+            Access-Control-Allow-Origin:
+              description: Public cross-origin access is enabled.
+              schema:
+                type: string
+                example: '*'
+            Cache-Control:
+              description: Public caching guidance for this response.
+              schema:
+                type: string
+                example: public, max-age=300
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PoolsResponse'
+              examples:
+                live:
+                  summary: Live WAODAO response
+                  externalValue: https://waodao.ai/api/v1/waodao/pools
+components:
+  schemas:
+    PoolItem:
+      type: object
+      required:
+      - pair
+      - type
+      - category
+      - chain
+      - dex
+      - protocol
+      - pool_identifier
+      - pool_url
+      - description
+      - status
+      properties:
+        pair:
+          type: string
+          example: WAO/ETH
+        type:
+          type: string
+          example: dex_pool
+        category:
+          type: string
+          enum:
+          - core_liquidity_route
+          - friendly_pool
+        chain:
+          type: string
+        dex:
+          type: string
+        protocol:
+          type:
+          - string
+          - 'null'
+        pool_identifier:
+          type: string
+        pool_contract:
+          type: string
+        pool_url:
+          type: string
+          format: uri
+        description:
+          type: string
+        status:
+          type: string
+          example: active
+      additionalProperties: false
+    PoolsResponse:
+      type: object
+      required:
+      - project
+      - schema
+      - purpose
+      - description
+      - docs_url
+      - links
+      - summary
+      - market_entry
+      - wao_token
+      - data_policy
+      - items
+      properties:
+        project:
+          type: string
+          example: WAODAO
+        schema:
+          type: string
+          example: waodao-pools@1
+        purpose:
+          type: string
+        description:
+          type: string
+        docs_url:
+          type: string
+          format: uri
+        links:
+          type: object
+          additionalProperties:
+            type: string
+            format: uri
+        summary:
+          type: object
+          properties:
+            total_pools:
+              type: integer
+              minimum: 0
+            chains:
+              type: array
+              items:
+                type: string
+            dexes:
+              type: array
+              items:
+                type: string
+          additionalProperties: false
+        market_entry:
+          type: object
+          additionalProperties: true
+        wao_token:
+          type: object
+          properties:
+            symbol:
+              type: string
+              example: WAO
+            name:
+              type: string
+              example: WAODAO
+            deployments:
+              type: object
+              additionalProperties:
+                type: object
+                additionalProperties: true
+          additionalProperties: true
+        data_policy:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/PoolItem'
+      additionalProperties: false
+externalDocs:
+  description: WAODAO Agent API documentation and getting started guide
+  url: https://waodao.ai/ai-agents
+x-refined-from:
+- waodao-agent-api-openapi-3.0.json
+- waodao-agent-api-openapi.json
