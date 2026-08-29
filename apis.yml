@@ -9,6 +9,17 @@ description: >-
   size: OpenAPI 3.1 and a 3.0.2 compatibility contract, an APIs.json index at both /apis.json and the /.well-known
   alias, an RFC 9727 API catalog advertised on every response via a Link header, a Postman collection, and llms.txt on
   both the site and the GitBook docs.
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 image: https://waodao.ai/img/logo.png
 url: https://raw.githubusercontent.com/api-evangelist/waodao/refs/heads/main/apis.yml
 created: '2026-07-24'
