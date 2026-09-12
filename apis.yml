@@ -176,6 +176,8 @@ x-enrichment:
   artifacts_added: 28
   pass: local-v1
 common:
+- type: Website
+  url: https://www.waodao.ai/
 - type: DeveloperPortal
   name: WAODAO for AI Agents
   url: https://waodao.ai/ai-agents
