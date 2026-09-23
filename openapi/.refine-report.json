@@ -1,10 +1,7 @@
 {
   "provider": "waodao",
   "sources": [
-    "waodao-artchain-api-openapi.yml",
-    "waodao-liquidity-pools-api-openapi.yml",
-    "waodao-schema-api-openapi.yml",
-    "waodao-token-metadata-api-openapi.yml"
+    "_original/waodao-agent-api-openapi-3.0.json"
   ],
   "outputs": [
     "waodao-artchain-api-openapi.yml",
@@ -16,11 +13,16 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "waodao-artchain-api-openapi.yml: upgraded openapi 3.0.2 -> OpenAPI 3.2.0",
-    "waodao-liquidity-pools-api-openapi.yml: upgraded openapi 3.0.2 -> OpenAPI 3.2.0",
-    "waodao-schema-api-openapi.yml: upgraded openapi 3.0.2 -> OpenAPI 3.2.0",
-    "waodao-token-metadata-api-openapi.yml: upgraded openapi 3.0.2 -> OpenAPI 3.2.0",
+    "1 archived document(s) dropped as subsets of other archived documents",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "waodao-agent-api-openapi-3.0.json: upgraded openapi 3.0.2 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "_original/waodao-agent-api-openapi.json: archived document superseded by a larger archived document",
+    "waodao-artchain-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "waodao-liquidity-pools-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "waodao-schema-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "waodao-token-metadata-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

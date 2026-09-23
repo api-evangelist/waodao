@@ -1,12 +1,12 @@
 openapi: 3.2.0
 info:
-  title: Waodao Schema API
+  title: WAODAO Agent Schema API
   version: 1.0.0
+  description: Public, read-only JSON API for traversing the WAODAO daily Human + AI ArtChain and discovering official WAO token deployments and liquidity pools. No API key or authentication is required. CORS is enabled.
   contact:
     name: WAODAO
     url: https://waodao.ai/ai-agents
     email: info@waodao.ai
-  description: 'Operations tagged Schema across 2 of this provider''s published API definitions: waodao-agent-api-openapi-3.0.json, waodao-agent-api-openapi.json. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://waodao.ai
   description: WAODAO production API
@@ -16,9 +16,6 @@ tags:
   description: Read WAODAO-specific field semantics and discovery links.
 paths:
   /api/v1/waodao/schema:
-    servers:
-    - url: https://waodao.ai
-      description: WAODAO production API
     get:
       operationId: getAgentApiSchema
       x-capability: waodao.schema.read
@@ -98,6 +95,3 @@ components:
 externalDocs:
   description: WAODAO Agent API documentation and getting started guide
   url: https://waodao.ai/ai-agents
-x-refined-from:
-- waodao-agent-api-openapi-3.0.json
-- waodao-agent-api-openapi.json

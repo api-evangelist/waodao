@@ -1,12 +1,12 @@
 openapi: 3.2.0
 info:
-  title: Waodao Art Chain API
+  title: WAODAO Agent Art Chain API
   version: 1.0.0
+  description: Public, read-only JSON API for traversing the WAODAO daily Human + AI ArtChain and discovering official WAO token deployments and liquidity pools. No API key or authentication is required. CORS is enabled.
   contact:
     name: WAODAO
     url: https://waodao.ai/ai-agents
     email: info@waodao.ai
-  description: 'Operations tagged ArtChain across 2 of this provider''s published API definitions: waodao-agent-api-openapi-3.0.json, waodao-agent-api-openapi.json. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://waodao.ai
   description: WAODAO production API
@@ -16,9 +16,6 @@ tags:
   description: Traverse the daily Human + AI ArtChain.
 paths:
   /api/v1/waodao/index:
-    servers:
-    - url: https://waodao.ai
-      description: WAODAO production API
     get:
       operationId: listArtChainDays
       x-capability: waodao.artchain.index.read
@@ -49,9 +46,6 @@ paths:
                   summary: Live WAODAO response
                   externalValue: https://waodao.ai/api/v1/waodao/index
   /api/v1/waodao/latest:
-    servers:
-    - url: https://waodao.ai
-      description: WAODAO production API
     get:
       operationId: getLatestArtChainDay
       x-capability: waodao.artchain.latest.read
@@ -103,6 +97,132 @@ paths:
                 code: 404
 components:
   schemas:
+    IndexItem:
+      type: object
+      required:
+      - day
+      - date
+      - timestamp
+      - name
+      - metadata_url
+      - external_url
+      - marketplace_url
+      - sale_status
+      - sale_type
+      - winner_bid_eth
+      - raw_site_data_url
+      - image
+      - real_artwork
+      - bonus_tokens
+      - prev_day
+      - next_day
+      - region
+      - main_color
+      - main_color_name
+      - twitter_trend
+      - trending_crypto
+      - trending_nft
+      - new_coin
+      - secret_hash
+      properties:
+        day:
+          type: integer
+          minimum: 1
+          example: 1
+        date:
+          type:
+          - string
+          - 'null'
+          format: date
+        timestamp:
+          type:
+          - integer
+          - 'null'
+        name:
+          type: string
+          example: 'WAO ART #1'
+        metadata_url:
+          type: string
+          format: uri
+        external_url:
+          type: string
+          format: uri
+        marketplace_url:
+          type: string
+          format: uri
+        sale_status:
+          type: string
+          enum:
+          - active
+          - unsold
+          - sold
+          - airdrop
+        sale_type:
+          type:
+          - string
+          - 'null'
+          enum:
+          - auction
+          - airdrop
+        winner_bid_eth:
+          type:
+          - string
+          - 'null'
+        raw_site_data_url:
+          type: string
+          format: uri
+        image:
+          type:
+          - string
+          - 'null'
+          format: uri
+        real_artwork:
+          type: boolean
+        bonus_tokens:
+          type:
+          - integer
+          - 'null'
+        prev_day:
+          type:
+          - integer
+          - 'null'
+        next_day:
+          type:
+          - integer
+          - 'null'
+        region:
+          type:
+          - string
+          - 'null'
+        main_color:
+          type:
+          - string
+          - 'null'
+        main_color_name:
+          type:
+          - string
+          - 'null'
+        twitter_trend:
+          type:
+          - string
+          - 'null'
+        trending_crypto:
+          type:
+          - string
+          - 'null'
+        trending_nft:
+          type:
+          - string
+          - 'null'
+        new_coin:
+          type:
+          - string
+          - 'null'
+        secret_hash:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     TokenResponse:
       type: object
       required:
@@ -304,24 +424,27 @@ components:
         code:
           type: integer
       additionalProperties: true
-    Attribute:
+    NewsItem:
       type: object
       required:
-      - trait_type
-      - value
+      - region
+      - key
+      - text
+      - url
       properties:
-        display_type:
+        region:
           type: string
-        trait_type:
+        key:
           type: string
-        value:
-          anyOf:
-          - type:
-            - string
-            - 'null'
-          - type: number
-          - type: integer
-          - type: boolean
+        text:
+          type:
+          - string
+          - 'null'
+        url:
+          type:
+          - string
+          - 'null'
+          description: Absolute source URL when available; an empty string means no source URL was supplied.
       additionalProperties: false
     IndexResponse:
       type: object
@@ -406,157 +529,25 @@ components:
           items:
             $ref: '#/components/schemas/IndexItem'
       additionalProperties: false
-    NewsItem:
+    Attribute:
       type: object
       required:
-      - region
-      - key
-      - text
-      - url
+      - trait_type
+      - value
       properties:
-        region:
+        display_type:
           type: string
-        key:
+        trait_type:
           type: string
-        text:
-          type:
-          - string
-          - 'null'
-        url:
-          type:
-          - string
-          - 'null'
-          description: Absolute source URL when available; an empty string means no source URL was supplied.
-      additionalProperties: false
-    IndexItem:
-      type: object
-      required:
-      - day
-      - date
-      - timestamp
-      - name
-      - metadata_url
-      - external_url
-      - marketplace_url
-      - sale_status
-      - sale_type
-      - winner_bid_eth
-      - raw_site_data_url
-      - image
-      - real_artwork
-      - bonus_tokens
-      - prev_day
-      - next_day
-      - region
-      - main_color
-      - main_color_name
-      - twitter_trend
-      - trending_crypto
-      - trending_nft
-      - new_coin
-      - secret_hash
-      properties:
-        day:
-          type: integer
-          minimum: 1
-          example: 1
-        date:
-          type:
-          - string
-          - 'null'
-          format: date
-        timestamp:
-          type:
-          - integer
-          - 'null'
-        name:
-          type: string
-          example: 'WAO ART #1'
-        metadata_url:
-          type: string
-          format: uri
-        external_url:
-          type: string
-          format: uri
-        marketplace_url:
-          type: string
-          format: uri
-        sale_status:
-          type: string
-          enum:
-          - active
-          - unsold
-          - sold
-          - airdrop
-        sale_type:
-          type:
-          - string
-          - 'null'
-          enum:
-          - auction
-          - airdrop
-        winner_bid_eth:
-          type:
-          - string
-          - 'null'
-        raw_site_data_url:
-          type: string
-          format: uri
-        image:
-          type:
-          - string
-          - 'null'
-          format: uri
-        real_artwork:
-          type: boolean
-        bonus_tokens:
-          type:
-          - integer
-          - 'null'
-        prev_day:
-          type:
-          - integer
-          - 'null'
-        next_day:
-          type:
-          - integer
-          - 'null'
-        region:
-          type:
-          - string
-          - 'null'
-        main_color:
-          type:
-          - string
-          - 'null'
-        main_color_name:
-          type:
-          - string
-          - 'null'
-        twitter_trend:
-          type:
-          - string
-          - 'null'
-        trending_crypto:
-          type:
-          - string
-          - 'null'
-        trending_nft:
-          type:
-          - string
-          - 'null'
-        new_coin:
-          type:
-          - string
-          - 'null'
-        secret_hash:
-          type:
-          - string
-          - 'null'
+        value:
+          anyOf:
+          - type:
+            - string
+            - 'null'
+          - type: number
+          - type: integer
+          - type: boolean
       additionalProperties: false
 externalDocs:
   description: WAODAO Agent API documentation and getting started guide
   url: https://waodao.ai/ai-agents
-x-refined-from:
-- waodao-agent-api-openapi-3.0.json
-- waodao-agent-api-openapi.json
