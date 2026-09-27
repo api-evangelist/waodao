@@ -146,17 +146,6 @@ paths:
                 code: 404
 components:
   schemas:
-    ErrorResponse:
-      type: object
-      required:
-      - error
-      - code
-      properties:
-        error:
-          type: string
-        code:
-          type: integer
-      additionalProperties: true
     Attribute:
       type: object
       required:
@@ -175,28 +164,6 @@ components:
           - type: number
           - type: integer
           - type: boolean
-      additionalProperties: false
-    NewsItem:
-      type: object
-      required:
-      - region
-      - key
-      - text
-      - url
-      properties:
-        region:
-          type: string
-        key:
-          type: string
-        text:
-          type:
-          - string
-          - 'null'
-        url:
-          type:
-          - string
-          - 'null'
-          description: Absolute source URL when available; an empty string means no source URL was supplied.
       additionalProperties: false
     TokenResponse:
       type: object
@@ -368,6 +335,39 @@ components:
               type: string
               format: uri
           additionalProperties: false
+      additionalProperties: false
+    ErrorResponse:
+      type: object
+      required:
+      - error
+      - code
+      properties:
+        error:
+          type: string
+        code:
+          type: integer
+      additionalProperties: true
+    NewsItem:
+      type: object
+      required:
+      - region
+      - key
+      - text
+      - url
+      properties:
+        region:
+          type: string
+        key:
+          type: string
+        text:
+          type:
+          - string
+          - 'null'
+        url:
+          type:
+          - string
+          - 'null'
+          description: Absolute source URL when available; an empty string means no source URL was supplied.
       additionalProperties: false
 externalDocs:
   description: WAODAO Agent API documentation and getting started guide
