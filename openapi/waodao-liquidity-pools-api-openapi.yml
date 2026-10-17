@@ -47,6 +47,52 @@ paths:
                   externalValue: https://waodao.ai/api/v1/waodao/pools
 components:
   schemas:
+    PoolItem:
+      type: object
+      required:
+      - pair
+      - type
+      - category
+      - chain
+      - dex
+      - protocol
+      - pool_identifier
+      - pool_url
+      - description
+      - status
+      properties:
+        pair:
+          type: string
+          example: WAO/ETH
+        type:
+          type: string
+          example: dex_pool
+        category:
+          type: string
+          enum:
+          - core_liquidity_route
+          - friendly_pool
+        chain:
+          type: string
+        dex:
+          type: string
+        protocol:
+          type:
+          - string
+          - 'null'
+        pool_identifier:
+          type: string
+        pool_contract:
+          type: string
+        pool_url:
+          type: string
+          format: uri
+        description:
+          type: string
+        status:
+          type: string
+          example: active
+      additionalProperties: false
     PoolsResponse:
       type: object
       required:
@@ -119,52 +165,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/PoolItem'
-      additionalProperties: false
-    PoolItem:
-      type: object
-      required:
-      - pair
-      - type
-      - category
-      - chain
-      - dex
-      - protocol
-      - pool_identifier
-      - pool_url
-      - description
-      - status
-      properties:
-        pair:
-          type: string
-          example: WAO/ETH
-        type:
-          type: string
-          example: dex_pool
-        category:
-          type: string
-          enum:
-          - core_liquidity_route
-          - friendly_pool
-        chain:
-          type: string
-        dex:
-          type: string
-        protocol:
-          type:
-          - string
-          - 'null'
-        pool_identifier:
-          type: string
-        pool_contract:
-          type: string
-        pool_url:
-          type: string
-          format: uri
-        description:
-          type: string
-        status:
-          type: string
-          example: active
       additionalProperties: false
 externalDocs:
   description: WAODAO Agent API documentation and getting started guide
