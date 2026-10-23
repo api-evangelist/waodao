@@ -158,12 +158,12 @@ components:
           - sold
           - airdrop
         sale_type:
-          type:
-          - string
-          - 'null'
-          enum:
-          - auction
-          - airdrop
+          oneOf:
+          - type: string
+            enum:
+            - auction
+            - airdrop
+          - type: 'null'
         winner_bid_eth:
           type:
           - string
