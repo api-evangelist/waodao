@@ -1,7 +1,7 @@
 ---
 generated: '2026-08-09'
 method: generated
-name: Verify WAO token deployments and liquidity pools
+name: verify-wao-token-deployments-and-liquidity-pools
 description: Read the official WAO token deployment and DEX liquidity-pool registry so an agent can verify on-chain presence and routes from the provider's own contract rather than from third-party listings.
 api: openapi/waodao-agent-api-openapi.json
 operations: [listWaoLiquidityPools, getAgentApiSchema]

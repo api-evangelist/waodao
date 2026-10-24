@@ -1,7 +1,7 @@
 ---
 generated: '2026-08-09'
 method: generated
-name: Traverse the WAODAO ArtChain
+name: traverse-the-waodao-artchain
 description: Map the WAODAO daily Human + AI ArtChain, then walk it day by day using the published traversal links instead of guessing day numbers or scraping HTML.
 api: openapi/waodao-agent-api-openapi.json
 operations: [listArtChainDays, getLatestArtChainDay, getArtChainDay]

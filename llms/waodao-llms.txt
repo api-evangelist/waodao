@@ -15,7 +15,7 @@
 - [ArtChain index](https://waodao.ai/api/v1/waodao/index): Prebuilt compact list of all published WAODAO days.
 - [Latest day](https://waodao.ai/api/v1/waodao/latest): Latest published ArtChain day.
 - [Token endpoint](https://waodao.ai/api/v1/waodao/token/1): Agent-readable metadata for one day. Replace `1` with any published day.
-- [Pools](https://waodao.ai/api/v1/waodao/pools): WAO token deployments and live liquidity pools.
+- [Pools](https://waodao.ai/api/v1/waodao/pools): WAO token deployments and current liquidity pools on Uniswap and Meteora, including Agentic Economy routes. Uniswap v4 pool IDs are not standalone contract addresses.
 - [Schema](https://waodao.ai/api/v1/waodao/schema): Field descriptions for the Agent API.
 - [AI Agent documentation](https://waodao.ai/ai-agents): Human-readable access policy, endpoint guide, examples, and discovery files.
 

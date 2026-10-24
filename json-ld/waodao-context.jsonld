@@ -1,0 +1,297 @@
+{
+  "@context": {
+    "@vocab": "https://waodao.ai/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "waodao": "https://waodao.ai/schema#",
+    "IndexItem": "waodao:IndexItem",
+    "day": {
+      "@id": "waodao:day",
+      "@type": "xsd:integer"
+    },
+    "date": {
+      "@id": "waodao:date",
+      "@type": "xsd:date"
+    },
+    "timestamp": {
+      "@id": "waodao:timestamp",
+      "@type": "xsd:integer"
+    },
+    "name": {
+      "@id": "waodao:name",
+      "@type": "xsd:string"
+    },
+    "metadata_url": {
+      "@id": "waodao:metadata_url",
+      "@type": "@id"
+    },
+    "external_url": {
+      "@id": "waodao:external_url",
+      "@type": "@id"
+    },
+    "marketplace_url": {
+      "@id": "waodao:marketplace_url",
+      "@type": "@id"
+    },
+    "sale_status": {
+      "@id": "waodao:sale_status",
+      "@type": "xsd:string"
+    },
+    "sale_type": {
+      "@id": "waodao:sale_type"
+    },
+    "winner_bid_eth": {
+      "@id": "waodao:winner_bid_eth",
+      "@type": "xsd:string"
+    },
+    "raw_site_data_url": {
+      "@id": "waodao:raw_site_data_url",
+      "@type": "@id"
+    },
+    "image": {
+      "@id": "waodao:image",
+      "@type": "@id"
+    },
+    "real_artwork": {
+      "@id": "waodao:real_artwork",
+      "@type": "xsd:boolean"
+    },
+    "bonus_tokens": {
+      "@id": "waodao:bonus_tokens",
+      "@type": "xsd:integer"
+    },
+    "prev_day": {
+      "@id": "waodao:prev_day",
+      "@type": "xsd:integer"
+    },
+    "next_day": {
+      "@id": "waodao:next_day",
+      "@type": "xsd:integer"
+    },
+    "region": {
+      "@id": "waodao:region",
+      "@type": "xsd:string"
+    },
+    "main_color": {
+      "@id": "waodao:main_color",
+      "@type": "xsd:string"
+    },
+    "main_color_name": {
+      "@id": "waodao:main_color_name",
+      "@type": "xsd:string"
+    },
+    "twitter_trend": {
+      "@id": "waodao:twitter_trend",
+      "@type": "xsd:string"
+    },
+    "trending_crypto": {
+      "@id": "waodao:trending_crypto",
+      "@type": "xsd:string"
+    },
+    "trending_nft": {
+      "@id": "waodao:trending_nft",
+      "@type": "xsd:string"
+    },
+    "new_coin": {
+      "@id": "waodao:new_coin",
+      "@type": "xsd:string"
+    },
+    "secret_hash": {
+      "@id": "waodao:secret_hash",
+      "@type": "xsd:string"
+    },
+    "Attribute": "waodao:Attribute",
+    "display_type": {
+      "@id": "waodao:display_type",
+      "@type": "xsd:string"
+    },
+    "trait_type": {
+      "@id": "waodao:trait_type",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "waodao:value"
+    },
+    "AgentContext": "waodao:AgentContext",
+    "summary": {
+      "@id": "waodao:summary",
+      "@type": "xsd:string"
+    },
+    "why_it_matters": {
+      "@id": "waodao:why_it_matters",
+      "@type": "xsd:string"
+    },
+    "use_cases": {
+      "@id": "waodao:use_cases",
+      "@container": "@list"
+    },
+    "economic_note": {
+      "@id": "waodao:economic_note",
+      "@type": "xsd:string"
+    },
+    "IndexResponse": "waodao:IndexResponse",
+    "project": {
+      "@id": "waodao:project",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "waodao:description",
+      "@type": "xsd:string"
+    },
+    "agent_context": {
+      "@id": "waodao:agent_context",
+      "@type": "@id"
+    },
+    "schema_url": {
+      "@id": "waodao:schema_url",
+      "@type": "@id"
+    },
+    "links": {
+      "@id": "waodao:links"
+    },
+    "collection": {
+      "@id": "waodao:collection"
+    },
+    "first_day": {
+      "@id": "waodao:first_day",
+      "@type": "xsd:integer"
+    },
+    "latest_day": {
+      "@id": "waodao:latest_day",
+      "@type": "xsd:integer"
+    },
+    "total_days": {
+      "@id": "waodao:total_days",
+      "@type": "xsd:integer"
+    },
+    "count": {
+      "@id": "waodao:count",
+      "@type": "xsd:integer"
+    },
+    "traversal": {
+      "@id": "waodao:traversal"
+    },
+    "items": {
+      "@id": "waodao:items",
+      "@container": "@list"
+    },
+    "ErrorResponse": "waodao:ErrorResponse",
+    "error": {
+      "@id": "waodao:error",
+      "@type": "xsd:string"
+    },
+    "code": {
+      "@id": "waodao:code",
+      "@type": "xsd:integer"
+    },
+    "NewsItem": "waodao:NewsItem",
+    "key": {
+      "@id": "waodao:key",
+      "@type": "xsd:string"
+    },
+    "text": {
+      "@id": "waodao:text",
+      "@type": "xsd:string"
+    },
+    "url": {
+      "@id": "waodao:url",
+      "@type": "xsd:string"
+    },
+    "TokenResponse": "waodao:TokenResponse",
+    "attributes": {
+      "@id": "waodao:attributes",
+      "@container": "@list"
+    },
+    "market": {
+      "@id": "waodao:market"
+    },
+    "news": {
+      "@id": "waodao:news",
+      "@container": "@list"
+    },
+    "trends": {
+      "@id": "waodao:trends"
+    },
+    "source": {
+      "@id": "waodao:source"
+    },
+    "PoolItem": "waodao:PoolItem",
+    "pair": {
+      "@id": "waodao:pair",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "waodao:type",
+      "@type": "xsd:string"
+    },
+    "category": {
+      "@id": "waodao:category",
+      "@type": "xsd:string"
+    },
+    "chain": {
+      "@id": "waodao:chain",
+      "@type": "xsd:string"
+    },
+    "dex": {
+      "@id": "waodao:dex",
+      "@type": "xsd:string"
+    },
+    "protocol": {
+      "@id": "waodao:protocol",
+      "@type": "xsd:string"
+    },
+    "pool_identifier": {
+      "@id": "waodao:pool_identifier",
+      "@type": "xsd:string"
+    },
+    "pool_contract": {
+      "@id": "waodao:pool_contract",
+      "@type": "xsd:string"
+    },
+    "pool_url": {
+      "@id": "waodao:pool_url",
+      "@type": "@id"
+    },
+    "status": {
+      "@id": "waodao:status",
+      "@type": "xsd:string"
+    },
+    "PoolsResponse": "waodao:PoolsResponse",
+    "purpose": {
+      "@id": "waodao:purpose",
+      "@type": "xsd:string"
+    },
+    "docs_url": {
+      "@id": "waodao:docs_url",
+      "@type": "@id"
+    },
+    "market_entry": {
+      "@id": "waodao:market_entry"
+    },
+    "wao_token": {
+      "@id": "waodao:wao_token"
+    },
+    "data_policy": {
+      "@id": "waodao:data_policy",
+      "@type": "xsd:string"
+    },
+    "SchemaResponse": "waodao:SchemaResponse",
+    "endpoints": {
+      "@id": "waodao:endpoints"
+    },
+    "fields": {
+      "@id": "waodao:fields"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "WAODAO API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects WAODAO's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-23) from openapi/waodao-artchain-api-openapi.yml, openapi/waodao-liquidity-pools-api-openapi.yml, openapi/waodao-schema-api-openapi.yml.",
+  "dcterms:created": "2026-10-23",
+  "dcterms:source": [
+    "openapi/waodao-artchain-api-openapi.yml",
+    "openapi/waodao-liquidity-pools-api-openapi.yml",
+    "openapi/waodao-schema-api-openapi.yml",
+    "openapi/waodao-token-metadata-api-openapi.yml"
+  ]
+}

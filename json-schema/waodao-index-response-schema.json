@@ -1,0 +1,322 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/waodao/main/json-schema/waodao-index-response-schema.json",
+  "title": "IndexResponse",
+  "x-generated": "2026-10-23",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/waodao-artchain-api-openapi.yml#/components/schemas/IndexResponse",
+  "type": "object",
+  "required": [
+    "project",
+    "schema",
+    "description",
+    "agent_context",
+    "schema_url",
+    "links",
+    "collection",
+    "first_day",
+    "latest_day",
+    "total_days",
+    "count",
+    "traversal",
+    "items"
+  ],
+  "properties": {
+    "project": {
+      "type": "string"
+    },
+    "schema": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "agent_context": {
+      "$ref": "#/$defs/AgentContext"
+    },
+    "schema_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "collection": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "nft_contract": {
+          "type": "string"
+        },
+        "chain": {
+          "type": "string"
+        },
+        "marketplace": {
+          "type": "string"
+        },
+        "marketplace_url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "first_day": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "latest_day": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "total_days": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "traversal": {
+      "type": "object",
+      "properties": {
+        "start_day": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "end_day": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "strategy": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/IndexItem"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "AgentContext": {
+      "type": "object",
+      "required": [
+        "summary",
+        "why_it_matters",
+        "use_cases",
+        "economic_note"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string"
+        },
+        "why_it_matters": {
+          "type": "string"
+        },
+        "use_cases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "economic_note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "IndexItem": {
+      "type": "object",
+      "required": [
+        "day",
+        "date",
+        "timestamp",
+        "name",
+        "metadata_url",
+        "external_url",
+        "marketplace_url",
+        "sale_status",
+        "sale_type",
+        "winner_bid_eth",
+        "raw_site_data_url",
+        "image",
+        "real_artwork",
+        "bonus_tokens",
+        "prev_day",
+        "next_day",
+        "region",
+        "main_color",
+        "main_color_name",
+        "twitter_trend",
+        "trending_crypto",
+        "trending_nft",
+        "new_coin",
+        "secret_hash"
+      ],
+      "properties": {
+        "day": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "timestamp": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "metadata_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "external_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "marketplace_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sale_status": {
+          "type": "string",
+          "enum": [
+            "active",
+            "unsold",
+            "sold",
+            "airdrop"
+          ]
+        },
+        "sale_type": {
+          "oneOf": [
+            {
+              "type": "string",
+              "enum": [
+                "auction",
+                "airdrop"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "winner_bid_eth": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "raw_site_data_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "image": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "real_artwork": {
+          "type": "boolean"
+        },
+        "bonus_tokens": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "prev_day": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "next_day": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "region": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "main_color": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "main_color_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "twitter_trend": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "trending_crypto": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "trending_nft": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "new_coin": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "secret_hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,189 @@
+generated: '2026-10-23'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 14
+  own: 3
+  other_domain: 8
+  platform: 3
+  roles:
+  - api
+  - community
+  - data
+  - docs
+  - other
+  - partner
+  - portal
+  - website
+hosts:
+- host: api.t.me
+  found_by:
+  - probed
+  - site-links
+  - namespace-probe
+  - well-known
+  types: []
+  serves: []
+  title: Telegram APIs
+  status: 200
+  registrable_domain: t.me
+  role: api
+  relation: other-domain
+- host: api.telegram.org
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: telegram.org
+  role: api
+  relation: other-domain
+- host: api.waodao.ai
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: waodao.ai
+  role: api
+  relation: own
+- host: core.telegram.org
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: telegram.org
+  role: other
+  relation: other-domain
+- host: discord.gg
+  found_by:
+  - pointer
+  - vendor-detect
+  types:
+  - Community
+  serves:
+  - community
+  vendor: discord
+  registrable_domain: discord.gg
+  role: community
+  relation: platform
+- host: open-data.t.me
+  found_by:
+  - probed
+  - site-links
+  - namespace-probe
+  - well-known
+  types: []
+  serves: []
+  title: Telegram APIs
+  status: 200
+  registrable_domain: t.me
+  role: data
+  relation: other-domain
+- host: opensea.io
+  found_by:
+  - docs-index
+  types: []
+  serves:
+  - docs
+  registrable_domain: opensea.io
+  role: other
+  relation: other-domain
+- host: partner.t.me
+  found_by:
+  - probed
+  - site-links
+  - namespace-probe
+  - well-known
+  types: []
+  serves: []
+  title: 'Telegram: View @partner'
+  status: 200
+  registrable_domain: t.me
+  role: partner
+  relation: other-domain
+- host: t.me
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Telegram
+  serves: []
+  registrable_domain: t.me
+  role: other
+  relation: other-domain
+- host: twitter.com
+  found_by:
+  - pointer
+  types:
+  - Twitter
+  serves: []
+  registrable_domain: twitter.com
+  role: other
+  relation: platform
+- host: waodao.ai
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - docs-index
+  - spec-found
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - DeveloperPortal
+  - Support
+  - APIsJSON
+  - APICatalog
+  serves:
+  - api
+  - docs
+  - spec
+  - documentation
+  vendor: gitbook
+  registrable_domain: waodao.ai
+  role: portal
+  relation: own
+- host: waodao.gitbook.io
+  found_by:
+  - pointer
+  - docs-index
+  - vendor-detect
+  types:
+  - Documentation
+  - Roadmap
+  - Disclaimer
+  serves:
+  - docs
+  - cdn
+  vendor: cloudflare
+  registrable_domain: gitbook.io
+  role: docs
+  relation: platform
+- host: webservices.t.me
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: t.me
+  role: other
+  relation: other-domain
+- host: www.waodao.ai
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Website
+  serves: []
+  registrable_domain: waodao.ai
+  role: website
+  relation: own

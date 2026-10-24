@@ -1,0 +1,89 @@
+generated: '2026-10-23'
+method: derived
+generator: derive-vocabulary.py
+source:
+- openapi/waodao-artchain-api-openapi.yml
+- openapi/waodao-liquidity-pools-api-openapi.yml
+- openapi/waodao-schema-api-openapi.yml
+- openapi/waodao-token-metadata-api-openapi.yml
+vocabulary:
+  name: WAODAO Domain Vocabulary
+  description: 'Terms declared by WAODAO''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-23'
+  terms:
+  - term: ArtChain
+    definition: Traverse the daily Human + AI ArtChain.
+    tags:
+    - Resource Group
+    source: openapi/waodao-artchain-api-openapi.yml
+  - term: Liquidity Pools
+    definition: Discover official WAO token deployments and registered DEX pools.
+    tags:
+    - Resource Group
+    source: openapi/waodao-liquidity-pools-api-openapi.yml
+  - term: Schema
+    definition: Read WAODAO-specific field semantics and discovery links.
+    tags:
+    - Resource Group
+    source: openapi/waodao-schema-api-openapi.yml
+  - term: Token Metadata
+    definition: Read agent-friendly metadata for a published WAODAO day.
+    tags:
+    - Resource Group
+    source: openapi/waodao-token-metadata-api-openapi.yml
+  - term: IndexItem
+    definition: 'Object declared by the contract with fields: day, date, timestamp, name, metadata_url, external_url, marketplace_url, sale_status,
+      sale_type, winner_bid_eth, raw_site_data_url, image. (12 more)'
+    tags:
+    - Object
+    source: openapi/waodao-artchain-api-openapi.yml#/components/schemas/IndexItem
+  - term: Attribute
+    definition: 'Object declared by the contract with fields: display_type, trait_type, value.'
+    tags:
+    - Object
+    source: openapi/waodao-artchain-api-openapi.yml#/components/schemas/Attribute
+  - term: AgentContext
+    definition: 'Object declared by the contract with fields: summary, why_it_matters, use_cases, economic_note.'
+    tags:
+    - Object
+    source: openapi/waodao-artchain-api-openapi.yml#/components/schemas/AgentContext
+  - term: IndexResponse
+    definition: 'Object declared by the contract with fields: project, schema, description, agent_context, schema_url, links, collection, first_day,
+      latest_day, total_days, count, traversal. (1 more)'
+    tags:
+    - Object
+    source: openapi/waodao-artchain-api-openapi.yml#/components/schemas/IndexResponse
+  - term: ErrorResponse
+    definition: 'Object declared by the contract with fields: error, code.'
+    tags:
+    - Object
+    source: openapi/waodao-artchain-api-openapi.yml#/components/schemas/ErrorResponse
+  - term: NewsItem
+    definition: 'Object declared by the contract with fields: region, key, text, url.'
+    tags:
+    - Object
+    source: openapi/waodao-artchain-api-openapi.yml#/components/schemas/NewsItem
+  - term: TokenResponse
+    definition: 'Object declared by the contract with fields: project, schema, schema_url, day, date, timestamp, name, description, image, external_url,
+      real_artwork, bonus_tokens. (7 more)'
+    tags:
+    - Object
+    source: openapi/waodao-artchain-api-openapi.yml#/components/schemas/TokenResponse
+  - term: PoolItem
+    definition: 'Object declared by the contract with fields: pair, type, category, chain, dex, protocol, pool_identifier, pool_contract, pool_url,
+      description, status.'
+    tags:
+    - Object
+    source: openapi/waodao-liquidity-pools-api-openapi.yml#/components/schemas/PoolItem
+  - term: PoolsResponse
+    definition: 'Object declared by the contract with fields: project, schema, purpose, description, docs_url, links, summary, market_entry, wao_token,
+      data_policy, items.'
+    tags:
+    - Object
+    source: openapi/waodao-liquidity-pools-api-openapi.yml#/components/schemas/PoolsResponse
+  - term: SchemaResponse
+    definition: 'Object declared by the contract with fields: schema, description, endpoints, agent_context, fields.'
+    tags:
+    - Object
+    source: openapi/waodao-schema-api-openapi.yml#/components/schemas/SchemaResponse

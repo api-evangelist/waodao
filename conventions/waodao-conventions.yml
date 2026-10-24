@@ -48,6 +48,7 @@ traversal:
     `links.prev` / `links.next` chain. `prev` is null on day 1 and `next` is null on the newest
     published day.
 idempotency:
+  coverage: none
   documented: false
   applicable: false
   notes: >-

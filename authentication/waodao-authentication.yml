@@ -7,7 +7,8 @@ summary:
   api_key_in: []
   oauth2_flows: []
   public: true
-schemes: []
+schemes:
+  - {}
 posture:
   authentication_required: false
   statement: >-

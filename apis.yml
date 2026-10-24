@@ -1,14 +1,14 @@
 name: WAODAO
-description: >-
-  WAODAO is a daily Human + AI "ArtChain": since 14 February 2023 one AI-generated NFT has been minted every day from
-  world news signals, digital trends, human input and AI art, producing an on-chain cultural archive that stood at
-  1,272 published days when the index was read on 2026-08-09. The WAODAO Agent API is a public, read-only JSON API — five GET operations, no account, no API key, no
-  authentication, CORS enabled — for traversing that ArtChain day by day and for discovering the official WAO token
-  deployments (Ethereum ERC-20 and a Wormhole-bridged Solana SPL token) and the registered DEX liquidity pools across
-  Uniswap, Balancer and Meteora. The project publishes an unusually complete machine-readable discovery surface for its
-  size: OpenAPI 3.1 and a 3.0.2 compatibility contract, an APIs.json index at both /apis.json and the /.well-known
-  alias, an RFC 9727 API catalog advertised on every response via a Link header, a Postman collection, and llms.txt on
-  both the site and the GitBook docs.
+
+description: 'WAODAO is a daily Human + AI "ArtChain": since 14 February 2023 one AI-generated NFT has been minted every day from world news signals,
+  digital trends, human input and AI art, producing an on-chain cultural archive that stood at 1,272 published days when the index was read on
+  2026-08-09. The WAODAO Agent API is a public, read-only JSON API — five GET operations, no account, no API key, no authentication, CORS enabled
+  — for traversing that ArtChain day by day and for discovering the official WAO token deployments (Ethereum ERC-20 and a Wormhole-bridged Solana
+  SPL token) and the registered DEX liquidity pools across Uniswap, Balancer and Meteora. The project publishes an unusually complete machine-readable
+  discovery surface for its size: OpenAPI 3.1 and a 3.0.2 compatibility contract, an APIs.json index at both /apis.json and the /.well-known alias,
+  an RFC 9727 API catalog advertised on every response via a Link header, a Postman collection, and llms.txt on both the site and the GitBook
+  docs.'
+
 deliveryModel:
   model: unknown
   open_source: false
@@ -20,6 +20,7 @@ deliveryModel:
   - openapi
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: unknown
   onboarding: open
@@ -33,150 +34,62 @@ accessModel:
   - security
   generated: '2026-09-02'
   method: derived
+
 image: https://waodao.ai/img/logo.png
+
 url: https://raw.githubusercontent.com/api-evangelist/waodao/refs/heads/main/apis.yml
+
 created: '2026-07-24'
+
 modified: '2026-08-09'
+
 specificationVersion: '0.23'
+
 tags:
-  - AI Agents
-  - ArtChain
-  - Human and AI
-  - NFT Metadata
-  - On-chain Culture
-  - Liquidity Pools
-  - Web3
-  - OpenAPI
-  - Ethereum
-  - Solana
-  - Agent-Native
-  - Digital Art
+- AI Agents
+- ArtChain
+- Human and AI
+- NFT Metadata
+- On-chain Culture
+- Liquidity Pools
+- Web3
+- OpenAPI
+- Ethereum
+- Solana
+- Agent-Native
+- Digital Art
+
 tags_raw:
-  - AI Agents
-  - ArtChain
-  - Human and AI
-  - NFT Metadata
-  - On-chain Culture
-  - Liquidity Pools
-  - Web3
-  - OpenAPI
-  - Ethereum
-  - Solana
-  - Agent Native
-  - Digital Art
-  - agent-native
-apis:
-- aid: waodao:waodao-artchain-api
-  name: WAODAO Art Chain API
-  description: Traverse the daily Human + AI ArtChain.
-  humanURL: https://waodao.ai/ai-agents
-  baseURL: https://waodao.ai/api/v1/waodao
-  tags:
-  - ArtChain
-  properties:
-  - type: OpenAPI
-    url: openapi/waodao-artchain-api-openapi.yml
-  - type: PostmanCollection
-    url: https://waodao.ai/postman-collection.json
-  - type: LLMsTxt
-    url: https://waodao.ai/llms.txt
-  - type: Documentation
-    url: https://waodao.ai/ai-agents
-  - type: APIReference
-    url: https://waodao.ai/ai-agents#api-reference
-  - type: GettingStarted
-    url: https://waodao.ai/ai-agents#api-reference
-  - type: Authentication
-    url: https://waodao.ai/ai-agents#api-access
-  - type: RateLimits
-    url: https://waodao.ai/ai-agents#api-access
-- aid: waodao:waodao-liquidity-pools-api
-  name: WAODAO Liquidity Pools API
-  description: Discover official WAO token deployments and registered DEX pools.
-  humanURL: https://waodao.ai/ai-agents
-  baseURL: https://waodao.ai/api/v1/waodao
-  tags:
-  - Liquidity Pools
-  properties:
-  - type: OpenAPI
-    url: openapi/waodao-liquidity-pools-api-openapi.yml
-  - type: PostmanCollection
-    url: https://waodao.ai/postman-collection.json
-  - type: LLMsTxt
-    url: https://waodao.ai/llms.txt
-  - type: Documentation
-    url: https://waodao.ai/ai-agents
-  - type: APIReference
-    url: https://waodao.ai/ai-agents#api-reference
-  - type: GettingStarted
-    url: https://waodao.ai/ai-agents#api-reference
-  - type: Authentication
-    url: https://waodao.ai/ai-agents#api-access
-  - type: RateLimits
-    url: https://waodao.ai/ai-agents#api-access
-- aid: waodao:waodao-schema-api
-  name: WAODAO Schema API
-  description: Read WAODAO-specific field semantics and discovery links.
-  humanURL: https://waodao.ai/ai-agents
-  baseURL: https://waodao.ai/api/v1/waodao
-  tags:
-  - Schema
-  properties:
-  - type: OpenAPI
-    url: openapi/waodao-schema-api-openapi.yml
-  - type: PostmanCollection
-    url: https://waodao.ai/postman-collection.json
-  - type: LLMsTxt
-    url: https://waodao.ai/llms.txt
-  - type: Documentation
-    url: https://waodao.ai/ai-agents
-  - type: APIReference
-    url: https://waodao.ai/ai-agents#api-reference
-  - type: GettingStarted
-    url: https://waodao.ai/ai-agents#api-reference
-  - type: Authentication
-    url: https://waodao.ai/ai-agents#api-access
-  - type: RateLimits
-    url: https://waodao.ai/ai-agents#api-access
-- aid: waodao:waodao-token-metadata-api
-  name: WAODAO Token Metadata API
-  description: Read agent-friendly metadata for a published WAODAO day.
-  humanURL: https://waodao.ai/ai-agents
-  baseURL: https://waodao.ai/api/v1/waodao
-  tags:
-  - Token Metadata
-  properties:
-  - type: OpenAPI
-    url: openapi/waodao-token-metadata-api-openapi.yml
-  - type: PostmanCollection
-    url: https://waodao.ai/postman-collection.json
-  - type: LLMsTxt
-    url: https://waodao.ai/llms.txt
-  - type: Documentation
-    url: https://waodao.ai/ai-agents
-  - type: APIReference
-    url: https://waodao.ai/ai-agents#api-reference
-  - type: GettingStarted
-    url: https://waodao.ai/ai-agents#api-reference
-  - type: Authentication
-    url: https://waodao.ai/ai-agents#api-access
-  - type: RateLimits
-    url: https://waodao.ai/ai-agents#api-access
+- AI Agents
+- ArtChain
+- Human and AI
+- NFT Metadata
+- On-chain Culture
+- Liquidity Pools
+- Web3
+- OpenAPI
+- Ethereum
+- Solana
+- Agent Native
+- Digital Art
+- agent-native
+
 maintainers:
-  - FN: WAODAO
-    email: info@waodao.ai
-    url: https://waodao.ai
-generated:
-  by: apis.io/add
-  model: claude-opus-4-8
-  confidence: 98
-  at: '2026-07-24T07:42:30.868Z'
-x-enrichment:
-  date: '2026-08-09'
-  status: enriched
-  artifacts_added: 28
-  pass: local-v1
+- FN: WAODAO
+  email: info@waodao.ai
+  url: https://waodao.ai
+
 common:
+- type: Spectral
+  url: rules/waodao-rules.yml
+- type: JSONLD
+  url: json-ld/waodao-context.jsonld
+- type: Vocabulary
+  url: vocabulary/waodao-vocabulary.yml
+- type: Hosts
+  url: hosts/waodao-hosts.yml
+- type: Vendors
+  url: vendors/waodao-vendors.yml
 - type: Website
   url: https://www.waodao.ai/
 - type: DeveloperPortal
@@ -228,7 +141,9 @@ common:
   url: data-model/waodao-data-model.yml
 - type: X-MCPServerCandidate
   url: mcp/waodao-mcp.yml
-  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published
+    API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting
+    the artifact-type surfaces with a server that does not exist.'
 - type: AgentSkill
   url: skills/_index.yml
 - type: Overlay
@@ -253,3 +168,124 @@ common:
   url: agentic-access/waodao-agentic-access.yml
 - type: DomainSecurity
   url: security/waodao-domain-security.yml
+
+apis:
+- aid: waodao:waodao-artchain-api
+  name: WAODAO Art Chain API
+  description: Traverse the daily Human + AI ArtChain.
+  humanURL: https://waodao.ai/ai-agents
+  baseURL: https://waodao.ai/api/v1/waodao
+  tags:
+  - ArtChain
+  properties:
+  - type: OpenAPI
+    url: openapi/waodao-artchain-api-openapi.yml
+  - type: PostmanCollection
+    url: https://waodao.ai/postman-collection.json
+  - type: LLMsTxt
+    url: https://waodao.ai/llms.txt
+  - type: Documentation
+    url: https://waodao.ai/ai-agents
+  - type: APIReference
+    url: https://waodao.ai/ai-agents#api-reference
+  - type: GettingStarted
+    url: https://waodao.ai/ai-agents#api-reference
+  - type: Authentication
+    url: https://waodao.ai/ai-agents#api-access
+  - type: RateLimits
+    url: https://waodao.ai/ai-agents#api-access
+  - type: JSONSchema
+    url: json-schema/waodao-token-response-schema.json
+  - type: JSONSchema
+    url: json-schema/waodao-index-response-schema.json
+- aid: waodao:waodao-liquidity-pools-api
+  name: WAODAO Liquidity Pools API
+  description: Discover official WAO token deployments and registered DEX pools.
+  humanURL: https://waodao.ai/ai-agents
+  baseURL: https://waodao.ai/api/v1/waodao
+  tags:
+  - Liquidity Pools
+  properties:
+  - type: OpenAPI
+    url: openapi/waodao-liquidity-pools-api-openapi.yml
+  - type: PostmanCollection
+    url: https://waodao.ai/postman-collection.json
+  - type: LLMsTxt
+    url: https://waodao.ai/llms.txt
+  - type: Documentation
+    url: https://waodao.ai/ai-agents
+  - type: APIReference
+    url: https://waodao.ai/ai-agents#api-reference
+  - type: GettingStarted
+    url: https://waodao.ai/ai-agents#api-reference
+  - type: Authentication
+    url: https://waodao.ai/ai-agents#api-access
+  - type: RateLimits
+    url: https://waodao.ai/ai-agents#api-access
+  - type: JSONSchema
+    url: json-schema/waodao-pools-response-schema.json
+- aid: waodao:waodao-schema-api
+  name: WAODAO Schema API
+  description: Read WAODAO-specific field semantics and discovery links.
+  humanURL: https://waodao.ai/ai-agents
+  baseURL: https://waodao.ai/api/v1/waodao
+  tags:
+  - Schema
+  properties:
+  - type: OpenAPI
+    url: openapi/waodao-schema-api-openapi.yml
+  - type: PostmanCollection
+    url: https://waodao.ai/postman-collection.json
+  - type: LLMsTxt
+    url: https://waodao.ai/llms.txt
+  - type: Documentation
+    url: https://waodao.ai/ai-agents
+  - type: APIReference
+    url: https://waodao.ai/ai-agents#api-reference
+  - type: GettingStarted
+    url: https://waodao.ai/ai-agents#api-reference
+  - type: Authentication
+    url: https://waodao.ai/ai-agents#api-access
+  - type: RateLimits
+    url: https://waodao.ai/ai-agents#api-access
+  - type: JSONSchema
+    url: json-schema/waodao-schema-response-schema.json
+- aid: waodao:waodao-token-metadata-api
+  name: WAODAO Token Metadata API
+  description: Read agent-friendly metadata for a published WAODAO day.
+  humanURL: https://waodao.ai/ai-agents
+  baseURL: https://waodao.ai/api/v1/waodao
+  tags:
+  - Token Metadata
+  properties:
+  - type: OpenAPI
+    url: openapi/waodao-token-metadata-api-openapi.yml
+  - type: PostmanCollection
+    url: https://waodao.ai/postman-collection.json
+  - type: LLMsTxt
+    url: https://waodao.ai/llms.txt
+  - type: Documentation
+    url: https://waodao.ai/ai-agents
+  - type: APIReference
+    url: https://waodao.ai/ai-agents#api-reference
+  - type: GettingStarted
+    url: https://waodao.ai/ai-agents#api-reference
+  - type: Authentication
+    url: https://waodao.ai/ai-agents#api-access
+  - type: RateLimits
+    url: https://waodao.ai/ai-agents#api-access
+  - type: JSONSchema
+    url: json-schema/waodao-token-response-schema.json
+
+generated:
+  by: apis.io/add
+  model: claude-opus-4-8
+  confidence: 98
+  at: '2026-07-24T07:42:30.868Z'
+
+x-enrichment:
+  date: '2026-10-23'
+  status: enriched
+  artifacts_added: 12
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
