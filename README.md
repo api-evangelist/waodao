@@ -1,4 +1,4 @@
-# WAODAO (waodao)
+# WAODAO
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,163 +66,154 @@
 
 WAODAO is a daily Human + AI "ArtChain": since 14 February 2023 one AI-generated NFT has been minted every day from world news signals, digital trends, human input and AI art, producing an on-chain cultural archive that stood at 1,272 published days when the index was read on 2026-08-09. The WAODAO Agent API is a public, read-only JSON API — five GET operations, no account, no API key, no authentication, CORS enabled — for traversing that ArtChain day by day and for discovering the official WAO token deployments (Ethereum ERC-20 and a Wormhole-bridged Solana SPL token) and the registered DEX liquidity pools across Uniswap, Balancer and Meteora. The project publishes an unusually complete machine-readable discovery surface for its size: OpenAPI 3.1 and a 3.0.2 compatibility contract, an APIs.json index at both /apis.json and the /.well-known alias, an RFC 9727 API catalog advertised on every response via a Link header, a Postman collection, and llms.txt on both the site and the GitBook docs.
 
-**APIs.json:** [https://waodao.apievangelist.com/apis.yml](https://waodao.apievangelist.com/apis.yml)
+**Areas:** AI Agents · ArtChain · Human and AI · NFT Metadata · On-chain Culture · Liquidity Pools · Web3 · OpenAPI · Ethereum · Solana · Agent-Native · Digital Art
 
-## Tags
+## WAODAO on APIs.io
 
-- AI Agents
-- ArtChain
-- Human and AI
-- NFT Metadata
-- On-chain Culture
-- Liquidity Pools
-- Web3
-- OpenAPI
-- Ethereum
-- Solana
-- Agent Native
-- Digital Art
+Everything profiled for WAODAO is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/waodao/](https://apis.io/providers/waodao/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (7)
 
-- **Created:** 2026-07-24
-- **Modified:** 2026-08-09
+- [WAODAO Art Chain API](https://apis.io/apis/waodao/waodao-artchain-api/) — Traverse the daily Human + AI ArtChain.
+- [WAODAO Liquidity Pools API](https://apis.io/apis/waodao/waodao-liquidity-pools-api/) — Discover official WAO token deployments and registered DEX pools.
+- [WAODAO Schema API](https://apis.io/apis/waodao/waodao-schema-api/) — Read WAODAO-specific field semantics and discovery links.
+- [WAODAO Token Metadata API](https://apis.io/apis/waodao/waodao-token-metadata-api/) — Read agent-friendly metadata for a published WAODAO day.
+- [WAODAO Art Chain API](https://apis.io/apis/waodao/waodao-artchain-api/) — Traverse the daily Human + AI ArtChain.
+- [WAODAO Liquidity Pools API](https://apis.io/apis/waodao/waodao-liquidity-pools-api/) — Discover official WAO token deployments and registered DEX pools.
+- [WAODAO Schema API](https://apis.io/apis/waodao/waodao-schema-api/) — Read WAODAO-specific field semantics and discovery links.
 
-## APIs
+### Published properties
 
-### WAODAO Art Chain API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Traverse the daily Human + AI ArtChain.
+#### MCP servers (1)
 
-- **Human URL:** [https://waodao.ai/ai-agents](https://waodao.ai/ai-agents)
-- **Base URL:** `https://waodao.ai/api/v1/waodao`
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [waodao](https://apis.io/servers/waodao/waodao/)
 
-- ArtChain
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [OpenAPI](openapi/waodao-artchain-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/waodao-artchain-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/waodao-artchain-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](https://waodao.ai/postman-collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [L L Ms Txt](https://waodao.ai/llms.txt)
-- [Documentation](https://waodao.ai/ai-agents)
-- [API Reference](https://waodao.ai/ai-agents#api-reference)
-- [Getting Started](https://waodao.ai/ai-agents#api-reference)
-- [Authentication](https://waodao.ai/ai-agents#api-access)
-- [Rate Limits](https://waodao.ai/ai-agents#api-access)
+- [Waodao Agentic Access](https://apis.io/agentic-access/waodao/waodao-agentic-access/)
 
-### WAODAO Liquidity Pools API
+#### JSON Schema (9)
 
-Discover official WAO token deployments and registered DEX pools.
+The data models the API reads and writes.
 
-- **Human URL:** [https://waodao.ai/ai-agents](https://waodao.ai/ai-agents)
-- **Base URL:** `https://waodao.ai/api/v1/waodao`
+- [SchemaResponse](https://apis.io/schemas/waodao/waodao/)
+- [ErrorResponse](https://apis.io/schemas/waodao/waodao-error/)
+- [IndexResponse](https://apis.io/schemas/waodao/waodao-index/)
+- [IndexResponse](https://apis.io/schemas/waodao/waodao-index-response/)
+- [PoolsResponse](https://apis.io/schemas/waodao/waodao-pools/)
+- [PoolsResponse](https://apis.io/schemas/waodao/waodao-pools-response/)
+- [SchemaResponse](https://apis.io/schemas/waodao/waodao-schema-response/)
+- [TokenResponse](https://apis.io/schemas/waodao/waodao-token/)
+- [TokenResponse](https://apis.io/schemas/waodao/waodao-token-response/)
 
-#### Tags
+#### JSON-LD (1)
 
-- Liquidity Pools
+Linked-data contexts for the provider's vocabulary.
 
-#### Properties
+- [Waodao Context](https://apis.io/jsonld/waodao/waodao-context/)
 
-- [OpenAPI](openapi/waodao-liquidity-pools-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/waodao-liquidity-pools-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/waodao-liquidity-pools-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](https://waodao.ai/postman-collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [L L Ms Txt](https://waodao.ai/llms.txt)
-- [Documentation](https://waodao.ai/ai-agents)
-- [API Reference](https://waodao.ai/ai-agents#api-reference)
-- [Getting Started](https://waodao.ai/ai-agents#api-reference)
-- [Authentication](https://waodao.ai/ai-agents#api-access)
-- [Rate Limits](https://waodao.ai/ai-agents#api-access)
+#### Examples (3)
 
-### WAODAO Schema API
+Example requests and responses.
 
-Read WAODAO-specific field semantics and discovery links.
+- [Waodao Pools Example](https://apis.io/examples/waodao/waodao-pools-example/)
+- [Waodao Schema Example](https://apis.io/examples/waodao/waodao-schema-example/)
+- [Waodao Token Day 1 Example](https://apis.io/examples/waodao/waodao-token-day-1-example/)
 
-- **Human URL:** [https://waodao.ai/ai-agents](https://waodao.ai/ai-agents)
-- **Base URL:** `https://waodao.ai/api/v1/waodao`
+#### Collections (5)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Schema
+- [Waodao Art Chain API](https://apis.io/collections/waodao/open-waodao-artchain-api/)
+- [Waodao Liquidity Pools API](https://apis.io/collections/waodao/open-waodao-liquidity-pools-api/)
+- [Waodao Schema API](https://apis.io/collections/waodao/open-waodao-schema-api/)
+- [Waodao Token Metadata API](https://apis.io/collections/waodao/open-waodao-token-metadata-api/)
+- [WAODAO Agent API](https://apis.io/collections/waodao/postman-waodao-agent-api/)
 
-#### Properties
+#### Overlays (1)
 
-- [OpenAPI](openapi/waodao-schema-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/waodao-schema-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/waodao-schema-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](https://waodao.ai/postman-collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [L L Ms Txt](https://waodao.ai/llms.txt)
-- [Documentation](https://waodao.ai/ai-agents)
-- [API Reference](https://waodao.ai/ai-agents#api-reference)
-- [Getting Started](https://waodao.ai/ai-agents#api-reference)
-- [Authentication](https://waodao.ai/ai-agents#api-access)
-- [Rate Limits](https://waodao.ai/ai-agents#api-access)
+OpenAPI overlays, including conversational phrasing for each operation.
 
-### WAODAO Token Metadata API
+- [Waodao Agent Api Overlay](https://apis.io/overlays/waodao/waodao-agent-api-overlay/)
 
-Read agent-friendly metadata for a published WAODAO day.
+#### Governance rules (1)
 
-- **Human URL:** [https://waodao.ai/ai-agents](https://waodao.ai/ai-agents)
-- **Base URL:** `https://waodao.ai/api/v1/waodao`
+Spectral rulesets for the provider's contracts.
 
-#### Tags
+- [WAODAO API Rules](https://apis.io/rules/waodao/waodao-rules/)
 
-- Token Metadata
+#### Security (2)
 
-#### Properties
+Authentication, trust centre, and vulnerability disclosure.
 
-- [OpenAPI](openapi/waodao-token-metadata-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/waodao-token-metadata-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/waodao-token-metadata-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](https://waodao.ai/postman-collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [L L Ms Txt](https://waodao.ai/llms.txt)
-- [Documentation](https://waodao.ai/ai-agents)
-- [API Reference](https://waodao.ai/ai-agents#api-reference)
-- [Getting Started](https://waodao.ai/ai-agents#api-reference)
-- [Authentication](https://waodao.ai/ai-agents#api-access)
-- [Rate Limits](https://waodao.ai/ai-agents#api-access)
+- [Waodao Authentication](https://apis.io/security/waodao/waodao-authentication/)
+- [Waodao Domain Security](https://apis.io/security/waodao/waodao-domain-security/)
 
-## Common Properties
+## Where to find this API
 
-- [Developer Portal](https://waodao.ai/ai-agents)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.waodao.ai/)
 - [Documentation](https://waodao.gitbook.io/docs/)
 - [Support](https://waodao.ai/ai-agents#api-access)
-- [Community](https://discord.gg/hsrkWhvDeS)
-- [Telegram](https://t.me/waodao_ai)
-- [Twitter](https://twitter.com/waodao_ai)
-- [Roadmap](https://waodao.gitbook.io/docs/development/roadmap)
-- [Disclaimer](https://waodao.gitbook.io/docs/disclaimer)
-- [Postman](postman/waodao-agent-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [A P Is J S O N](https://waodao.ai/apis.json)
-- [A P I Catalog](https://waodao.ai/.well-known/api-catalog)
-- [Well Known](well-known/waodao-well-known.yml)
-- [L L Ms Txt](llms/waodao-llms.txt)
-- [Authentication](authentication/waodao-authentication.yml)
-- [Conventions](conventions/waodao-conventions.yml)
-- [Error Catalog](errors/waodao-problem-types.yml)
-- [Lifecycle](lifecycle/waodao-lifecycle.yml)
-- [Conformance](conformance/waodao-conformance.yml)
-- [Data Model](data-model/waodao-data-model.yml)
-- [M C P Server](mcp/waodao-mcp.yml)
-- [Agent Skill](skills/_index.yml)
-- [Overlay](overlays/waodao-agent-api-overlay.yaml)
-- [Examples](examples/waodao-token-day-1-example.json)
-- [Examples](examples/waodao-pools-example.json)
-- [Examples](examples/waodao-schema-example.json)
-- [JSON Schema](json-schema/waodao-token.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/waodao-index.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/waodao-pools.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/waodao-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/waodao-error.json) — [JSON Schema](https://json-schema.org/specification)
-- [Agentic Access](agentic-access/waodao-agentic-access.yml)
-- [Domain Security](security/waodao-domain-security.yml)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** WAODAO
-**Email:** info@waodao.ai
-**URL:** https://waodao.ai
+**Kin Score 40.6** — developing · rubric 0.25.0 · scored 2026-10-31
+
+| Facet | Score |
+|---|---|
+| Discoverability | 83.9 |
+| Contract quality | 60.9 |
+| Contract governance | 31.8 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 61.3 |
+| Access clarity | 0.0 |
+
+**Agent readiness 37.9** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | yes |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | paginated |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/waodao/](https://apis.io/providers/waodao/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for WAODAO: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/waodao/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
