@@ -72,15 +72,12 @@ WAODAO is a daily Human + AI "ArtChain": since 14 February 2023 one AI-generated
 
 Everything profiled for WAODAO is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/waodao/](https://apis.io/providers/waodao/)** — or go straight to one of the APIs or properties below.
 
-### APIs (7)
+### APIs (4)
 
 - [WAODAO Art Chain API](https://apis.io/apis/waodao/waodao-artchain-api/) — Traverse the daily Human + AI ArtChain.
 - [WAODAO Liquidity Pools API](https://apis.io/apis/waodao/waodao-liquidity-pools-api/) — Discover official WAO token deployments and registered DEX pools.
 - [WAODAO Schema API](https://apis.io/apis/waodao/waodao-schema-api/) — Read WAODAO-specific field semantics and discovery links.
 - [WAODAO Token Metadata API](https://apis.io/apis/waodao/waodao-token-metadata-api/) — Read agent-friendly metadata for a published WAODAO day.
-- [WAODAO Art Chain API](https://apis.io/apis/waodao/waodao-artchain-api/) — Traverse the daily Human + AI ArtChain.
-- [WAODAO Liquidity Pools API](https://apis.io/apis/waodao/waodao-liquidity-pools-api/) — Discover official WAO token deployments and registered DEX pools.
-- [WAODAO Schema API](https://apis.io/apis/waodao/waodao-schema-api/) — Read WAODAO-specific field semantics and discovery links.
 
 ### Published properties
 
@@ -98,25 +95,15 @@ Which operations an agent can call, which act, and which need a human in the loo
 
 - [Waodao Agentic Access](https://apis.io/agentic-access/waodao/waodao-agentic-access/)
 
-#### JSON Schema (9)
+#### JSON Schema (5)
 
 The data models the API reads and writes.
 
 - [SchemaResponse](https://apis.io/schemas/waodao/waodao/)
 - [ErrorResponse](https://apis.io/schemas/waodao/waodao-error/)
 - [IndexResponse](https://apis.io/schemas/waodao/waodao-index/)
-- [IndexResponse](https://apis.io/schemas/waodao/waodao-index-response/)
 - [PoolsResponse](https://apis.io/schemas/waodao/waodao-pools/)
-- [PoolsResponse](https://apis.io/schemas/waodao/waodao-pools-response/)
-- [SchemaResponse](https://apis.io/schemas/waodao/waodao-schema-response/)
 - [TokenResponse](https://apis.io/schemas/waodao/waodao-token/)
-- [TokenResponse](https://apis.io/schemas/waodao/waodao-token-response/)
-
-#### JSON-LD (1)
-
-Linked-data contexts for the provider's vocabulary.
-
-- [Waodao Context](https://apis.io/jsonld/waodao/waodao-context/)
 
 #### Examples (3)
 
@@ -142,12 +129,6 @@ OpenAPI overlays, including conversational phrasing for each operation.
 
 - [Waodao Agent Api Overlay](https://apis.io/overlays/waodao/waodao-agent-api-overlay/)
 
-#### Governance rules (1)
-
-Spectral rulesets for the provider's contracts.
-
-- [WAODAO API Rules](https://apis.io/rules/waodao/waodao-rules/)
-
 #### Security (2)
 
 Authentication, trust centre, and vulnerability disclosure.
@@ -165,27 +146,27 @@ Links to the company's own pages. This repository publishes no copy of their spe
 
 ## API Evangelist rating
 
-**Kin Score 40.6** — developing · rubric 0.25.0 · scored 2026-10-31
+**Kin Score 37.1** — thin · rubric 0.25.0 · scored 2026-10-23
 
 | Facet | Score |
 |---|---|
 | Discoverability | 83.9 |
-| Contract quality | 60.9 |
-| Contract governance | 31.8 |
+| Contract quality | 53.4 |
+| Contract governance | 18.2 |
 | Operational transparency | 5.3 |
 | Developer ergonomics | 61.3 |
 | Access clarity | 0.0 |
 
-**Agent readiness 37.9** — agent-ready
+**Agent readiness 43.6** — agent-native
 
 | Agent-readiness dimension | Result |
 |---|---|
 | Spec Presence | yes |
 | Agentic Access | derived (partial credit) |
-| Reversibility Documented | — |
+| Reversibility Documented | na |
 | MCP Server | — |
 | Auth Clarity | bearer (partial credit) |
-| Idempotency | — |
+| Idempotency | na |
 | Error Semantics | verified |
 | OpenAPI Examples | verified |
 | Rate Limit Signal | documented (partial credit) |
@@ -194,7 +175,7 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | Well Known Catalog | yes |
 | Consent Identity | — |
 | Agent Card | — |
-| Dry Run Mode | — |
+| Dry Run Mode | na |
 | Delegated Identity | — |
 | Protected Resource Metadata | — |
 | Dynamic Client Registration | — |
